@@ -8,6 +8,10 @@
 .top-icons > div {margin-left: 1rem;}
 	.langs, .currency {position: relative; display: flex; align-items: center;}
 	.langs *, .currency * {padding-right: 0.25rem;}
+	.langs .fa-angle-down, .currency .fa-angle-down {color: #666;}
 	.langs img, .currency img {width:18px;}
 	.langs > ul, .currency > ul {position: absolute; background-color: #fff; padding: 0.5rem; top:18px; display: none;}
 	.langs > ul > li, .currency > ul > li  {display: flex; padding: 0.25rem 0; align-items: center;}
+	.schs {background-color: #f1f1f1; padding: 0.25rem; border-bottom: 1px solid #ccc;}
+	.schs input {width: 130px; background-color: transparent; outline-color: transparent; padding-left: 0.5rem;}
+	.schs button {padding: 0 0.5rem; background-color: transparent; outline-color: transparent;}
