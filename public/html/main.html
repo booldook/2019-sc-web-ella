@@ -65,10 +65,44 @@
 				</ul>
 			</div>
 			<div class="schs">
-				<form action="/sch_main" method="post" name="schForm">
+				<form action="/sch_main" method="post" name="schForm" onsubmit="return false;">
 					<input type="text" name="schTxt" class="sch-txt" placeholder="Search">
-					<button type="submit" class="sch-bt"><i class="fas fa-search"></i>
+					<button type="submit" class="sch-bt"><i class="fas fa-search"></i></button>
 				</form>
+				<div class="sch-layer">
+					<div class="sch-trending">
+						<div class="tit">TRENDING</div>
+						<ul class="tags">
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>dempus</span>
+							</li>
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>sample</span>
+							</li>
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>magnis</span>
+							</li>
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>loremous sailduar</span>
+							</li>
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>namninos</span>
+							</li>
+							<li class="tag">
+								<i class="fas fa-search"></i>
+								<span>dinterdum</span>
+							</li>
+						</ul>
+					</div>
+					<div class="sch-popular">
+						<div class="tit">POPULAR PRODUCTS</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</header>
