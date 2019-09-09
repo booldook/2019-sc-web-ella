@@ -4,3 +4,10 @@
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
 .top-banner .fa-times {float: right; margin-top: 0.2rem; cursor: pointer;}
+.top-icons {display: flex; justify-content: flex-end; align-items: center; font-size: 0.75rem; padding: 1rem 0;}
+.top-icons > div {margin-left: 1rem;}
+	.langs, .currency {position: relative; display: flex; align-items: center;}
+	.langs *, .currency * {padding-right: 0.25rem;}
+	.langs img, .currency img {width:18px;}
+	.langs > ul, .currency > ul {position: absolute; background-color: #fff; padding: 0.5rem; top:18px; display: none;}
+	.langs > ul > li, .currency > ul > li  {display: flex; padding: 0.25rem 0; align-items: center;}
