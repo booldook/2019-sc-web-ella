@@ -29,3 +29,15 @@
 	.sch-layer .prd-refs {display: flex; align-items: center;}
 	.sch-layer .prd-ref:not(:last-child) {width: 24px; height: 24px; overflow: hidden; border: 1px solid #ccc; border-radius: 50%; margin-right: 0.25rem;}
 
+	.top-links {display: flex; justify-content: space-between; font-size: 0.75rem;}
+	.top-links > .logo {width: 100px;}
+	.top-link > .desc {font-weight: bold; text-align: right;}
+	.top-link > .bts {display: flex; align-items: center; margin-top: 0.5rem;}
+	.top-link > .bts > li {margin-left: 1rem; display: flex; align-items: center;}
+	.top-link > .bts > li > * {margin-left: 0.5rem;}
+	.top-link .rnd-cnt {width:20px; height: 20px; border-radius: 50%; background-color: lightcoral; text-align: center;}
+	.top-link .underbar {cursor: pointer;}
+	.top-link .underbar > div {border-bottom: 1px solid #222; width: 0; 
+		transition: all 1s;}
+	.top-link .underbar:hover > div {width: 100%;}
+
