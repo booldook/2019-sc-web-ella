@@ -3,6 +3,8 @@
 .underbar {cursor: pointer;}
 .underbar:after {display: block; content: ""; border-bottom: 1px solid #222; width: 0; transition: all 0.5s;}
 .underbar:hover:after {width: 100%;}
+.tip {position: absolute; color: #fff; font-size: 0.5rem; padding: 2px 4px 6px 4px; 
+	background: url(../img/tooltip-bar.png) no-repeat center bottom; top: -10px; right: 0;}
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
@@ -42,7 +44,7 @@
 	
 
 	.top-navis {background-color: #232323; margin-top: 0.75rem; font-size: 0.75rem;}
-	.top-navis > .top-navi {display: flex; position: relative;}
+	.top-navis > .top-navi {display: flex;}
 	.top-navis .underbar:after {border-color: #fff;}
-	.top-navis .navi {padding: 0.75rem 0; margin-right: 2rem; color: #fff; font-weight: bold; letter-spacing: 1.5px;}
+	.top-navis .navi {padding: 0.75rem 0; margin-right: 2rem; color: #fff; font-weight: bold; letter-spacing: 1.5px; position: relative;}
 
