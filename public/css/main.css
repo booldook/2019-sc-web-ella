@@ -1,5 +1,8 @@
 /* 공통사항 */
 .wrap {width: 100%; max-width: 1170px; margin: 0 auto;}
+.underbar {cursor: pointer;}
+.underbar:after {display: block; content: ""; border-bottom: 1px solid #222; width: 0; transition: all 0.5s;}
+.underbar:hover:after {width: 100%;}
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
@@ -36,8 +39,10 @@
 	.top-link > .bts > li {margin-left: 1rem; display: flex; align-items: center;}
 	.top-link > .bts > li > * {margin-left: 0.5rem;}
 	.top-link .rnd-cnt {width:20px; height: 20px; border-radius: 50%; background-color: lightcoral; text-align: center;}
-	.top-link .underbar {cursor: pointer;}
-	.top-link .underbar > div {border-bottom: 1px solid #222; width: 0; 
-		transition: all 1s;}
-	.top-link .underbar:hover > div {width: 100%;}
+	
+
+	.top-navis {background-color: #232323; margin-top: 0.75rem; font-size: 0.75rem;}
+	.top-navis > .top-navi {display: flex; position: relative;}
+	.top-navis .underbar:after {border-color: #fff;}
+	.top-navis .navi {padding: 0.75rem 0; margin-right: 2rem; color: #fff; font-weight: bold; letter-spacing: 1.5px;}
 
