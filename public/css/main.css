@@ -51,13 +51,17 @@
 	.top-navis .subs {width: 100%; padding: 1rem; background-color: #fff; position: absolute; left: 0; top: 43px; color: #333;}
 
 	.top-navis .subs .underbar:after {border-color: #007bff;}
-	.sub-navi a {text-decoration: none;}
+	.sub-navi a {text-decoration: none; display: inline-block;}
 	.sub-navi a:link,
 	.sub-navi a:visited,
-	.sub-navi a:active {color: #232323;}
+	.sub-navi a:active {color: #888;}
 	.sub-navi a:hover {color: #007bff;}
 	.grid-two {display: flex; justify-content: space-between;}
 	.grid-two > .sub-navi {width: 600px; display: flex; flex-wrap: wrap; align-items: flex-start;}
-	.grid-two > .sub-navi > ul {flex: 33.3333% 0 0; margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start;}
+	.grid-two > .sub-navi > ul {flex: 33.3333% 0 0; margin-bottom: 2rem;}
 	.grid-two > .sub-navi > ul > li {padding-bottom: 0.5rem;}
+
+	.sub-ad1 {display: flex;}
+	.sub-ad1 > div {flex: 50% 0 0; padding-left: 8px;}
+	.sub-ad1 img {padding-bottom: 8px;}
 
