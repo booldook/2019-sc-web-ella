@@ -64,4 +64,12 @@
 	.sub-ad1 {display: flex;}
 	.sub-ad1 > div {flex: 50% 0 0; padding-left: 8px;}
 	.sub-ad1 img {padding-bottom: 8px;}
-
+	
+	.sub-ad2 {display: flex;}
+	.sub-ad2 > div {width: 200px; padding-left: 8px;}
+	.sub-ad2 .prd {padding: 0 0.5rem;}
+	.sub-ad2 .prd > li {margin-bottom: 0.5rem;}
+	.sub-ad2 .prd-tit, 
+	.sub-ad2 .prd-price {font-weight: bold;}
+	.sub-ad2 .prd-refs {display: flex; align-items: center;}
+	.sub-ad2 .prd-ref:not(:last-child) {width: 24px; height: 24px; overflow: hidden; border: 1px solid #ccc; border-radius: 50%; margin-right: 0.25rem;}
