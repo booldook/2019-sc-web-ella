@@ -65,11 +65,22 @@
 	.sub-ad1 > div {flex: 50% 0 0; padding-left: 8px;}
 	.sub-ad1 img {padding-bottom: 8px;}
 	
-	.sub-ad2 {display: flex;}
+	.sub-ad2 {display: flex; letter-spacing: 0; text-align: center; font-size: 0.75rem;}
 	.sub-ad2 > div {width: 200px; padding-left: 8px;}
 	.sub-ad2 .prd {padding: 0 0.5rem;}
 	.sub-ad2 .prd > li {margin-bottom: 0.5rem;}
-	.sub-ad2 .prd-tit, 
+	.sub-ad2 .prd-img {padding: 0 1.5rem; position: relative;}
+	.sub-ad2 .prd-img > div {position: absolute; top: 0; right: 0; padding: 0 0.25rem;background-color: #ef5845; color: #fff; font-size: 0.75em; font-weight: bold;}
+	.sub-ad2 .prd-img > img:hover {opacity: 0.5; transition: all 0.5s;}
+	.sub-ad2 .prd-tit {font-weight: bold;} 
+	.sub-ad2 .prd-desc {line-height: 1.5;}
 	.sub-ad2 .prd-price {font-weight: bold;}
-	.sub-ad2 .prd-refs {display: flex; align-items: center;}
-	.sub-ad2 .prd-ref:not(:last-child) {width: 24px; height: 24px; overflow: hidden; border: 1px solid #ccc; border-radius: 50%; margin-right: 0.25rem;}
+	.sub-ad2 .prd-price > :nth-child(1) {color: #888; text-decoration: line-through;}
+	.sub-ad2 .prd-price > :nth-child(2) {margin: 0 0.25rem; color: #bbb; font-size: 0.875em;}
+	.sub-ad2 .prd-price > :nth-child(3) {color: #ef5845;}
+	.sub-ad2 .prd-opts {margin-top: 1rem;}
+	.sub-ad2 .prd-opts > span {border-bottom: 1px solid #333; padding: 0.25rem 0;}
+
+	.sub-ad2 .prd-banner {overflow: hidden;}
+	.sub-ad2 .prd-banner > img {transition: all 1s;}
+	.sub-ad2 .prd-banner:hover > img {transform: scale(1.2);}
