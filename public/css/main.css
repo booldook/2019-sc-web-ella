@@ -105,3 +105,12 @@
 
 	.grid-sizer, 
 	.grid-item {width: 25%;}
+
+
+	/* 메인 배너 */
+	.main-bans {position: relative;}
+	.main-ban {position: relative;}
+	.main-bans > .pager-prev,
+	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #999; border-radius: 50%; color: #999; font-size: 3rem; line-height: 76px; text-align: center; top: 50%; transform: translateY(-50%);}
+	.main-bans > .pager-prev {left: 10%;}
+	.main-bans > .pager-next {right: 10%;}
