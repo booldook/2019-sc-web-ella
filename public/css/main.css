@@ -1,4 +1,6 @@
 /* 공통사항 */
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 .wrap {width: 100%; max-width: 1170px; margin: 0 auto;}
 .underbar {cursor: pointer;}
 .underbar:after {display: block; content: ""; border-bottom: 1px solid #222; width: 0; transition: all 0.5s;}
@@ -111,6 +113,6 @@
 	.main-bans {position: relative;}
 	.main-ban {position: relative;}
 	.main-bans > .pager-prev,
-	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #999; border-radius: 50%; color: #999; font-size: 3rem; line-height: 76px; text-align: center; top: 50%; transform: translateY(-50%);}
+	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #666; border-radius: 50%; color: #666; font-size: 3rem; line-height: 78px; text-align: center; top: 50%; transform: translateY(-50%); font-family: 'Poppins', sans-serif;}
 	.main-bans > .pager-prev {left: 10%;}
 	.main-bans > .pager-next {right: 10%;}
