@@ -102,3 +102,6 @@
 	.grid-masonry > .sub-navi {width: 800px;}
 	.grid-masonry > .sub-navi > ul {margin-bottom: 2rem;}
 	.grid-masonry > .sub-navi > ul > li {padding-bottom: 0.5rem;}
+
+	.grid-sizer, 
+	.grid-item {width: 25%;}
