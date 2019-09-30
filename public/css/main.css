@@ -115,7 +115,7 @@ html, body {font-family: 'Lato', sans-serif;}
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative; }
+	.main-bans {position: relative; overflow: hidden;}
 	.main-ban {position: relative; width: 300%; display: flex;}
 	.main-ban > li {position: relative;}
 	.main-bans > .pager-prev,
