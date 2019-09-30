@@ -131,7 +131,10 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 	.bests {margin-top: 2rem; position: relative;}
 	.best-items {display: flex; justify-content: space-between; align-items: flex-start;}
-	.best-item {flex: 18% 0 1; position: relative;}
+	.best-item {flex: 18% 0 1; position: relative; background-color: #111; overflow: hidden; cursor: pointer;}
+	.best-item > img {transition: all 1s;}
+	.best-item:hover > img {transform: scale(1.2); opacity: 0.8;}
+	.best-item:hover > .underbar:after {width: 100%;}
 	.best-item > .underbar {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #f9f9f9; font-size: 1.25rem; font-weight: 700;}
 	.best-item > .underbar:after {border-color: #f9f9f9;}
 	.best-prev,
