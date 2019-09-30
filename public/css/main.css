@@ -1,5 +1,8 @@
 /* 공통사항 */
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:700,900&display=swap');
+
+html, body {font-family: 'Lato', sans-serif;}
 
 .wrap {width: 100%; max-width: 1170px; margin: 0 auto;}
 .underbar {cursor: pointer;}
@@ -119,8 +122,9 @@
 	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #666; border-radius: 50%; color: #666; font-size: 3rem; line-height: 78px; text-align: center; top: 50%; transform: translateY(-50%); font-family: 'Poppins', sans-serif;}
 	.main-bans > .pager-prev {left: 10%;}
 	.main-bans > .pager-next {right: 10%;}
-	.ban-conts {position: absolute; top: 50%; transform: translateY(-50%); text-align: center;}
-	.ban-conts > .ban-tit {font-size: 2.5rem; font-weight: bold; padding: 0.5rem 0;}
+	.ban-conts {position: absolute; top: 50%; transform: translateY(-50%); text-align: center; width: 400px;}
+	.ban-conts > .ban-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
 	.ban-conts > .ban-bar {width: 40px; border-bottom: 2px solid #111; display: inline-block;}
+	.ban-conts > .ban-cont {font-size: 0.75rem; color: #444; padding: 1rem 0 1.5rem 0;}
 	.main-ban > :nth-child(1) > .ban-conts {left: 20%;}
 	.main-ban > :nth-child(3) > .ban-conts {right: 20%;}
