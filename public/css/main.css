@@ -7,6 +7,8 @@
 .underbar:hover:after {width: 100%;}
 .tip {position: absolute; color: #fff; font-size: 0.5rem; padding: 2px 4px 6px 4px; 
 	background: url(../img/tooltip-bar.png) no-repeat center bottom; top: -24px; right: 0;}
+.bt-rev {padding: 0.5rem 4rem; font-size: 0.875rem; color: #f9f9f9; background-color: #111; font-weight: bold; transition: all 1s; box-shadow: 1px 1px 1px rgba(0,0,0,0.2); position: absolute;}
+.bt-rev:hover {color: #111; background-color: #f9f9f9;}
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
