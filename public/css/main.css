@@ -7,7 +7,7 @@
 .underbar:hover:after {width: 100%;}
 .tip {position: absolute; color: #fff; font-size: 0.5rem; padding: 2px 4px 6px 4px; 
 	background: url(../img/tooltip-bar.png) no-repeat center bottom; top: -24px; right: 0;}
-.bt-rev {padding: 0.5rem 4rem; font-size: 0.875rem; color: #f9f9f9; background-color: #111; font-weight: bold; transition: all 1s; box-shadow: 1px 1px 1px rgba(0,0,0,0.2); position: absolute;}
+.bt-rev {padding: 0.5rem 4rem; display: inline-block; font-size: 0.875rem; color: #f9f9f9; background-color: #111; font-weight: bold; transition: all 1s; box-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
 .bt-rev:hover {color: #111; background-color: #f9f9f9;}
 
 /* Header */
@@ -112,9 +112,15 @@
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative;}
-	.main-ban {position: relative;}
+	.main-bans {position: relative; }
+	.main-ban {position: relative; width: 300%; display: flex;}
+	.main-ban > li {position: relative;}
 	.main-bans > .pager-prev,
 	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #666; border-radius: 50%; color: #666; font-size: 3rem; line-height: 78px; text-align: center; top: 50%; transform: translateY(-50%); font-family: 'Poppins', sans-serif;}
 	.main-bans > .pager-prev {left: 10%;}
 	.main-bans > .pager-next {right: 10%;}
+	.ban-conts {position: absolute; top: 50%; transform: translateY(-50%); text-align: center;}
+	.ban-conts > .ban-tit {font-size: 2.5rem; font-weight: bold; padding: 0.5rem 0;}
+	.ban-conts > .ban-bar {width: 40px; border-bottom: 2px solid #111; display: inline-block;}
+	.main-ban > :nth-child(1) > .ban-conts {left: 20%;}
+	.main-ban > :nth-child(3) > .ban-conts {right: 20%;}
