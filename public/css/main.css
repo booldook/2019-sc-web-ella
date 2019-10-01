@@ -19,8 +19,12 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .common-items {display: flex; justify-content: space-between;}
 .common-item {flex-basis: 33.3333%; flex-grow: 0; margin: 0 1%; text-align: center; font-size: 0.75rem;}
 .common-img {position: relative;}
-.common-img > .img-hover {position: absolute; top: 0; left: 0; width: 100%; opacity: 0.5;}
-.common-img > ul {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center;}
+.common-img > img {transition: all 1s;}
+.common-img > .img-hover {position: absolute; top: 0; left: 0; width: 100%; opacity: 0;}
+.common-img > ul {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; opacity: 0; transition: all 1s;}
+.common-img:hover > .img-def {opacity: 0;}
+.common-img:hover > .img-hover {opacity: 0.5;}
+.common-img:hover > ul {opacity: 1;}
 .common-img > ul > li {margin-top: 1rem;}
 .common-img .heart {width: 24px; height: 24px; background-color: #ffe5e5; color: #232323; line-height: 24px; border-radius: 50%;}
 .common-img .bt-rev {padding: 0.5rem 2rem; border: 1px solid #232323;}
