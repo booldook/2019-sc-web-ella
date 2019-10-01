@@ -15,6 +15,15 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .bt-rev.invert {color: #111; background-color: #f9f9f9;}
 .bt-rev.invert:hover {color: #f9f9f9; background-color: #111;}
 
+/* common-items */
+.common-items {display: flex; justify-content: space-between;}
+.common-item {flex-basis: 33.3333%; flex-grow: 0; margin: 0 1%;}
+.common-img {position: relative;}
+.common-img > .img-hover {position: absolute; top: 0; left: 0; width: 100%; opacity: 0.5;}
+.common-img > ul {position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border: 1px solid blue;}
+.common-img > ul > li {border: 1px solid red;}
+.common-img .quicks {align-self: stretch;}
+
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
