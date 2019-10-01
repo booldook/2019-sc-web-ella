@@ -10,8 +10,11 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .underbar:hover:after {width: 100%;}
 .tip {position: absolute; color: #fff; font-size: 0.5rem; padding: 2px 4px 6px 4px; 
 	background: url(../img/tooltip-bar.png) no-repeat center bottom; top: -24px; right: 0;}
-.bt-rev {padding: 0.5rem 4rem; display: inline-block; font-size: 0.875rem; color: #f9f9f9; background-color: #111; font-weight: bold; transition: all 1s; box-shadow: 1px 1px 1px rgba(0,0,0,0.2); }
+.bt-rev {padding: 0.5rem 4rem; display: inline-block; font-size: 0.875rem; color: #f9f9f9; background-color: #111; font-weight: bold; transition: all 1s; box-shadow: 1px 1px 1px rgba(0,0,0,0.2); cursor: pointer;}
 .bt-rev:hover {color: #111; background-color: #f9f9f9;}
+.bt-rev.invert {color: #111; background-color: #f9f9f9;}
+.bt-rev.invert:hover {color: #f9f9f9; background-color: #111;}
+
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
@@ -146,3 +149,14 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	.best-next:hover {color: #f9f9f9; background-color: #111;} 
 	.best-prev {left: -15px;}
 	.best-next {right: -15px;}
+
+/* BEST SELLERS */
+.sellers {border-top: 1px solid #ddd; margin-top: 2rem;}
+.seller-items {width: 100%; max-width: 1920px; margin: 0 auto; display: flex;}
+.seller-items > div {flex: 44% 0 0;}
+.seller-items > div:first-child {padding-right: 5%;}
+.seller-imgs {position: relative;}
+.seller-conts {position: absolute; left: 15%; top: 50%; transform: translateY(-50%); text-align: center; width: 60%; color: #f9f9f9;}
+.seller-conts > .seller-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
+.seller-conts > .seller-slogan {letter-spacing: 3px; font-size: 0.875rem;}
+.seller-conts > .seller-cont {font-size: 0.75rem; padding: 1rem 0 1.5rem 0;}
