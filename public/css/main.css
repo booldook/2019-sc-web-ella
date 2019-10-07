@@ -17,7 +17,8 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 /* common-items */
 .common-items {display: flex; justify-content: space-between;}
-.common-item {flex-basis: 33.3333%; flex-grow: 0; margin: 0 1%; text-align: center; font-size: 0.75rem;}
+.common-items > .common-item {flex: 33.3333% 0 1; margin: 0 1%; text-align: center; font-size: 0.75rem;}
+.common-items.five > .common-item {flex: 20% 0 1;}
 .common-img {position: relative;}
 .common-img > img {transition: all 1s;}
 .common-img > .img-hover {position: absolute; top: 0; left: 0; width: 100%; opacity: 0;}
@@ -186,8 +187,6 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	
 
 /* BEST SELLERS */
-.seller-prds > .seller-tit {text-align: center; font-size: 1.25rem; margin: 2rem 0 1rem 0;}
-.seller-prds > .seller-slogan {text-align: center; font-size: 0.75rem; font-weight: normal; color: #666; margin-bottom: 2rem;}
 .sellers {border-top: 1px solid #ddd; margin-top: 4rem;}
 .sellers.invert {margin-top: 0rem; border-top: none; border-bottom: 1px solid #ddd;}
 .seller-items {width: 100%; max-width: 1920px; margin: 0 auto; display: flex;}
@@ -201,6 +200,9 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .seller-conts > .seller-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
 .seller-conts > .seller-slogan {letter-spacing: 3px; font-size: 0.875rem;}
 .seller-conts > .seller-cont {font-size: 0.75rem; padding: 1rem 0 1.5rem 0;}
+.seller-prds {position: relative;}
+.seller-prds > .seller-tit {text-align: center; font-size: 1.25rem; margin: 2rem 0 1rem 0;}
+.seller-prds > .seller-slogan {text-align: center; font-size: 0.75rem; font-weight: normal; color: #666; margin-bottom: 2rem;}
 
 /* NEW ARRIVAL */
 .arrivals {padding: 5rem 0; background-color: #f8f8f8;}
