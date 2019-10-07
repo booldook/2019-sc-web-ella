@@ -221,3 +221,9 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .arrival-item:hover > .arrival-tit {opacity: 0.8;}
 .arrival-item:hover > .arrival-cont {opacity: 0.8;}
 .arrival-item:hover > .arrival-bt {opacity: 1; top: 75%;}
+
+/* CHOICES */
+.choices {margin-top: 5rem;}
+.choice-navis {display: flex; justify-content: center; color: #969696; text-align: center; font-size: 1.25rem; margin-bottom: 3rem;}
+.choice-navi {margin: 0 1rem; padding: 0.25rem; cursor: pointer;}
+.choice-navi.active {color: #111; border-bottom: 2px solid #111;}
