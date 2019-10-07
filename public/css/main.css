@@ -189,9 +189,13 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .seller-prds > .seller-tit {text-align: center; font-size: 1.25rem; margin: 2rem 0 1rem 0;}
 .seller-prds > .seller-slogan {text-align: center; font-size: 0.75rem; font-weight: normal; color: #666; margin-bottom: 2rem;}
 .sellers {border-top: 1px solid #ddd; margin-top: 4rem;}
+.sellers.invert {margin-top: 0rem; border-top: none; border-bottom: 1px solid #ddd;}
 .seller-items {width: 100%; max-width: 1920px; margin: 0 auto; display: flex;}
+.seller-items.invert {justify-content: flex-end;}
 .seller-items > div {flex: 44% 0 0;}
 .seller-items > div:first-child {padding-right: 5%;}
+.seller-items.invert > div:first-child {padding-right: 0;}
+.seller-items.invert > div:last-child {padding-left: 5%;}
 .seller-imgs {position: relative;}
 .seller-conts {position: absolute; left: 15%; top: 50%; transform: translateY(-50%); text-align: center; width: 60%; color: #f9f9f9;}
 .seller-conts > .seller-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
@@ -199,7 +203,8 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .seller-conts > .seller-cont {font-size: 0.75rem; padding: 1rem 0 1.5rem 0;}
 
 /* NEW ARRIVAL */
-.arrivals {margin-top: 5rem; text-align: center; display: flex; justify-content: space-between; align-items: flex-start;}
+.arrivals {padding: 5rem 0; background-color: #f8f8f8;}
+.arrival-items {text-align: center; display: flex; justify-content: space-between; align-items: flex-start;}
 .arrival-item {flex: 31% 0 0; position: relative; color: #fff; overflow: hidden;}
 .arrival-item > li:not(:first-child) {position: absolute; width: 70%;}
 .arrival-item > li {transition: all 1s;}
