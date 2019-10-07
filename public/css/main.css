@@ -46,6 +46,15 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .common-rel > .rel > div {width: 100%; height: 100%; position: relative; overflow: hidden;}
 .common-rel > .rel > div > img {position: absolute; width: 100%; top: 0; left: 0; transform: translateY(-20%);}
 
+/* product left, right Arrow */
+.best-prev,
+.best-next {width: 30px; height: 30px; border: 1px solid #111; border-radius: 50%; text-align: center; line-height: 30px; font-family: 'Poppins', sans-serif; color: #111; background-color: #f9f9f9; transition: all 1s; position: absolute; top: calc(50% - 15px); font-weight: bold; font-size: 1.25rem; cursor: pointer; z-index: 999;}
+.best-prev:hover,
+.best-next:hover {color: #f9f9f9; background-color: #111;} 
+.best-prev {left: -15px;}
+.best-next {right: -15px;}
+
+
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
@@ -174,14 +183,11 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	.best-item:hover > .underbar:after {width: 100%;}
 	.best-item > .underbar {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #f9f9f9; font-size: 1.25rem; font-weight: 700;}
 	.best-item > .underbar:after {border-color: #f9f9f9;}
-	.best-prev,
-	.best-next {width: 30px; height: 30px; border: 1px solid #111; border-radius: 50%; text-align: center; line-height: 30px; font-family: 'Poppins', sans-serif; color: #111; background-color: #f9f9f9; transition: all 1s; position: absolute; top: calc(50% - 15px); font-weight: bold; font-size: 1.25rem; cursor: pointer;}
-	.best-prev:hover,
-	.best-next:hover {color: #f9f9f9; background-color: #111;} 
-	.best-prev {left: -15px;}
-	.best-next {right: -15px;}
+	
 
 /* BEST SELLERS */
+.seller-prds > .seller-tit {text-align: center; font-size: 1.25rem; margin: 2rem 0 1rem 0;}
+.seller-prds > .seller-slogan {text-align: center; font-size: 0.75rem; font-weight: normal; color: #666; margin-bottom: 2rem;}
 .sellers {border-top: 1px solid #ddd; margin-top: 4rem;}
 .seller-items {width: 100%; max-width: 1920px; margin: 0 auto; display: flex;}
 .seller-items > div {flex: 44% 0 0;}
