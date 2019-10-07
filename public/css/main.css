@@ -197,3 +197,20 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .seller-conts > .seller-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
 .seller-conts > .seller-slogan {letter-spacing: 3px; font-size: 0.875rem;}
 .seller-conts > .seller-cont {font-size: 0.75rem; padding: 1rem 0 1.5rem 0;}
+
+/* NEW ARRIVAL */
+.arrivals {margin-top: 5rem; text-align: center; display: flex; justify-content: space-between; align-items: flex-start;}
+.arrival-item {flex: 32% 0 0; position: relative; color: #fff; overflow: hidden;}
+.arrival-item > li:not(:first-child) {position: absolute; width: 70%;}
+.arrival-item > li {transition: all 1s;}
+.arrival-item > .arrival-img > img {transition: all 1s;}
+.arrival-item > .arrival-img {background-color: #000;}
+.arrival-item > .arrival-slogan {top: 30%; left: 15%;}
+.arrival-item > .arrival-tit {top: 40%; left: 15%; font-size: 2rem;}
+.arrival-item > .arrival-cont {top: 55%; left: 15%; font-size: 0.75rem; font-weight: normal;}
+.arrival-item > .arrival-bt {top: 110%; left: 15%; opacity: 0;}
+.arrival-item:hover > .arrival-img > img {opacity: 0.8; transform: scale(1.2);}
+.arrival-item:hover > .arrival-slogan {opacity: 0.8;}
+.arrival-item:hover > .arrival-tit {opacity: 0.8;}
+.arrival-item:hover > .arrival-cont {opacity: 0.8;}
+.arrival-item:hover > .arrival-bt {opacity: 1; top: 75%;}
