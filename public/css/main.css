@@ -200,7 +200,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 /* NEW ARRIVAL */
 .arrivals {margin-top: 5rem; text-align: center; display: flex; justify-content: space-between; align-items: flex-start;}
-.arrival-item {flex: 32% 0 0; position: relative; color: #fff; overflow: hidden;}
+.arrival-item {flex: 31% 0 0; position: relative; color: #fff; overflow: hidden;}
 .arrival-item > li:not(:first-child) {position: absolute; width: 70%;}
 .arrival-item > li {transition: all 1s;}
 .arrival-item > .arrival-img > img {transition: all 1s;}
