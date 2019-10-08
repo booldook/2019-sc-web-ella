@@ -260,3 +260,15 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .insta-items {display: flex; justify-content: space-between; align-items: flex-start;}
 .insta-item {flex: 19% 0 0;}
 .insta-bts {margin-top: 2rem;}
+
+/* footer */
+footer {background-color: #232323; color: #fff; padding: 1.5rem 0; font-size: 0.875rem;}
+footer a {color: #aaa; text-decoration: none; font-size: 0.875em; transition: all 1s;}
+footer a:link {color: #aaa; text-decoration: none;}
+footer a:visited {color: #aaa; text-decoration: none;}
+footer a:hover {color: #fff; text-decoration: none;}
+footer a:active {color: #aaa; text-decoration: none;}
+.footer-items {display: flex; justify-content: space-between; align-items: flex-start;}
+.footer-item:not(:last-child) {flex: 20% 0 0;}
+.footer-item:last-child {flex: 40% 0 0;}
+.footer-item .tit {margin-bottom: 1.5rem; font-weight: bold;}
