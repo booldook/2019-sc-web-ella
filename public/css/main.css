@@ -252,3 +252,11 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .brands {border-top: 1px solid #ccc; padding: 2rem 0;}
 .brand-items {display: flex; justify-content: space-evenly; align-items: center;}
 .brand-item {flex: 18% 0 0;}
+
+/* INSTAS */
+.instas {background-color: #f1f1f1; padding: 5rem 0; text-align: center;}
+.insta-tit {font-size: 1.25rem; font-weight: 900; margin-bottom: 1.5rem; color: #111;}
+.insta-slogan {font-size: 0.75rem; color: #666; margin-bottom: 2rem;}
+.insta-items {display: flex; justify-content: space-between; align-items: flex-start;}
+.insta-item {flex: 19% 0 0;}
+.insta-bts {margin-top: 2rem;}
