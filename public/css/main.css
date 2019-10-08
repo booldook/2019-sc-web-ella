@@ -264,7 +264,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 /* footer */
 footer {background-color: #232323; color: #fff; padding: 1.5rem 0; font-size: 0.875rem;}
 footer a {color: #aaa; text-decoration: none; font-size: 0.875em; transition: all 1s; display: inline-block;}
-footer .underbar:after {border-bottom-color: #fff;}
+footer a.underbar:after {border-bottom-color: #fff;}
 footer a:link {color: #aaa; text-decoration: none;}
 footer a:visited {color: #aaa; text-decoration: none;}
 footer a:hover {color: #fff; text-decoration: none;}
@@ -273,3 +273,15 @@ footer a:active {color: #aaa; text-decoration: none;}
 .footer-item:not(:last-child) {flex: 20% 0 0;}
 .footer-item:last-child {flex: 40% 0 0;}
 .footer-item .tit {margin-bottom: 1.5rem; font-weight: bold;}
+
+.footer-sns {display: flex;}
+.sns-brand {display: flex; flex: 60% 0 0; justify-content: space-between;}
+.sns-like {flex: 40% 0 0;}
+.sns-brand > li {width: 36px; height: 36px; border-radius: 50%; line-height: 36px; font-size: 1.25em; background-color: #f1f1f1; color: #232323; text-align: center; transition: all 0.5s; cursor: pointer;}
+.sns-brand > li:hover {color: #fff;}
+.sns-brand > li:nth-child(1):hover {background-color: #3b5998}
+.sns-brand > li:nth-child(2):hover {background-color: #55acee}
+.sns-brand > li:nth-child(3):hover {background-color: #dd4b39}
+.sns-brand > li:nth-child(4):hover {background-color: #497299}
+.sns-brand > li:nth-child(5):hover {background-color: #cb2027}
+.sns-brand > li:nth-child(6):hover {background-color: #f4e24c}
