@@ -289,3 +289,10 @@ footer a:active {color: #aaa; text-decoration: none;}
 .sns-like > div:last-child {display: flex; justify-content: center; margin-top: 0.5rem;}
 .sns-like > div:last-child > button {margin: 0 0.25rem; background-color: #3b5998; border: none; padding: 2px 6px; font-size: 0.75em;}
 .sns-like > div:last-child > button:hover {background-color: #2a4275;}
+.footer-email {display: flex; justify-content: space-between; margin-top: 1.5rem;}
+.footer-email > input {flex: 80% 1 0; background-color: transparent; border: 1px solid #444; padding: 0.5rem; color: #fff; outline-color: transparent;}
+.footer-email > button {flex: 19% 0 1; width: 19%; padding: 0.5rem 0; background-color: #444; margin-left: 1%;}
+
+.footer-bots {color: #aaa; border-top: 1px solid #444; font-size: 0.875rem; line-height: 2rem;}
+.footer-billing {margin-top: 2rem; display: flex;}
+.footer-billing > li {flex: 38px 0 0; margin-right: 20px;}
