@@ -246,3 +246,9 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .post-desc > .tit {color: #111; font-size: 1.25rem; margin-bottom: 0.75rem;}
 .post-desc > .date {color: #aaa; font-size: 0.875rem; margin-bottom: 1.25rem;}
 .post-desc > .desc {color: #666; font-size: 0.75rem;}
+
+
+/* BRANDS */
+.brands {border-top: 1px solid #ccc; padding: 2rem 0;}
+.brand-items {display: flex; justify-content: space-evenly; align-items: center;}
+.brand-item {flex: 18% 0 0;}
