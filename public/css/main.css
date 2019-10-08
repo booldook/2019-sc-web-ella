@@ -60,6 +60,12 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .line-tit > span {background-color: #fff; display: inline-block; padding: 0 20px; transform: translateY(50%);}
 .line-slogan {text-align: center; font-size: 0.75rem; color: #666; margin-top: 1.75rem;}
 
+/* 이미지 커지고 투명해지고 어두워지고 */
+.hover-img {overflow: hidden; background-color: #000;}
+.hover-img > img {transition: all 1s;}
+.hover-img:hover > img {opacity: 0.7; transform: scale(1.2);}
+
+
 
 /* Header */
 .top-banner {background-color: #ffe8e8; position: relative; text-align: center; color: #b05d5d; font-size: 0.75rem; padding: 0.5rem 0;}
@@ -233,4 +239,10 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .choice-navi.active {color: #111; border-bottom: 2px solid #111;}
 
 /* POSTS */
-.posts {margin-top: 5rem;}
+.posts {margin-top: 5rem; text-align: center;}
+.post-items {margin-top: 3rem; display: flex; justify-content: space-between; align-items: flex-start;}
+.post-item {flex: 48% 0 0;}
+.post-desc {padding: 1rem 7%;}
+.post-desc > .tit {color: #111; font-size: 1.25rem; margin-bottom: 0.75rem;}
+.post-desc > .date {color: #aaa; font-size: 0.875rem; margin-bottom: 1.25rem;}
+.post-desc > .desc {color: #666; font-size: 0.75rem;}
