@@ -285,3 +285,7 @@ footer a:active {color: #aaa; text-decoration: none;}
 .sns-brand > li:nth-child(4):hover {background-color: #497299}
 .sns-brand > li:nth-child(5):hover {background-color: #cb2027}
 .sns-brand > li:nth-child(6):hover {background-color: #f4e24c}
+.sns-like {text-align: center; font-size: 0.75em;}
+.sns-like > div:last-child {display: flex; justify-content: center;}
+.sns-like > div:last-child > button {margin: 0 0.25rem; background-color: #3b5998; border: none; padding: 2px 6px; font-size: 0.75em;}
+.sns-like > div:last-child > button:hover {background-color: #2a4275;}
