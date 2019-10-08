@@ -275,7 +275,7 @@ footer a:active {color: #aaa; text-decoration: none;}
 .footer-item .tit {margin-bottom: 1.5rem; font-weight: bold;}
 
 .footer-sns {display: flex;}
-.sns-brand {display: flex; flex: 60% 0 0; justify-content: space-between;}
+.sns-brand {display: flex; flex: 60% 0 0; justify-content: space-between; margin-bottom: 2rem;}
 .sns-like {flex: 40% 0 0;}
 .sns-brand > li {width: 36px; height: 36px; border-radius: 50%; line-height: 36px; font-size: 1.25em; background-color: #f1f1f1; color: #232323; text-align: center; transition: all 0.5s; cursor: pointer;}
 .sns-brand > li:hover {color: #fff;}
@@ -285,7 +285,7 @@ footer a:active {color: #aaa; text-decoration: none;}
 .sns-brand > li:nth-child(4):hover {background-color: #497299}
 .sns-brand > li:nth-child(5):hover {background-color: #cb2027}
 .sns-brand > li:nth-child(6):hover {background-color: #f4e24c}
-.sns-like {text-align: center; font-size: 0.75em;}
-.sns-like > div:last-child {display: flex; justify-content: center;}
+.sns-like {text-align: center; font-size: 0.875em;}
+.sns-like > div:last-child {display: flex; justify-content: center; margin-top: 0.5rem;}
 .sns-like > div:last-child > button {margin: 0 0.25rem; background-color: #3b5998; border: none; padding: 2px 6px; font-size: 0.75em;}
 .sns-like > div:last-child > button:hover {background-color: #2a4275;}
