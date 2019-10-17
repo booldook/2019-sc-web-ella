@@ -76,7 +76,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	.langs *, .currency * {padding-right: 0.25rem;}
 	.langs .fa-angle-down, .currency .fa-angle-down {color: #666;}
 	.langs img, .currency img {width:18px;}
-	.langs > ul, .currency > ul {position: absolute; background-color: #fff; padding: 0.5rem; top:18px; display: none;}
+	.langs > ul, .currency > ul {position: absolute; background-color: #fff; padding: 0.5rem; top:18px; display: none; box-shadow: 0 3px 3px rgba(0,0,0,0.3);}
 	.langs > ul > li, .currency > ul > li  {display: flex; padding: 0.25rem 0; align-items: center;}
 
 	/* 상단 서치바와 서치레이어 */

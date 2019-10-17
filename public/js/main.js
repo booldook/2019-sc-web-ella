@@ -20,6 +20,17 @@ $("#bt-top-close").click(function(){
 	$.cookie("top-banner-close", true, {expires: d});
 });
 
+// 언어, 통화 선택
+$(".sel-top .fa-angle-down").click(function(){
+	$(this).next().stop().slideToggle(300);
+	$(this).toggleClass("fa-angle-down fa-angle-up");
+});
+$(".sel-top li").click(function(){
+	$(this).parent().parent().children(".sel-top-img").attr("src", $(this).children("img").attr("src"));
+	$(this).parent().parent().children(".sel-top-txt").text($(this).children("span").text());
+	$(this).parent().prev().trigger("click");
+});
+
 
 
 
