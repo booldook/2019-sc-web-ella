@@ -26,10 +26,35 @@ $(".sel-top .fa-angle-down").click(function(){
 	$(this).toggleClass("fa-angle-down fa-angle-up");
 });
 $(".sel-top li").click(function(){
-	$(this).parent().parent().children(".sel-top-img").attr("src", $(this).children("img").attr("src"));
-	$(this).parent().parent().children(".sel-top-txt").text($(this).children("span").text());
+	$(this).parent().parent().find(".sel-top-img").attr("src", $(this).find("img").attr("src"));
+	$(this).parent().parent().find(".sel-top-txt").text($(this).find("span").text());
 	$(this).parent().prev().trigger("click");
 });
+
+// 메인 네비게이션
+
+$(".navi-under").mouseenter(function(){
+	$(this).find(".subs").css({"display": "block"}).stop().animate({"top": "43px", "opacity": 1}, 500);
+});
+$(".navi-under").mouseleave(function(){
+	$(this).find(".subs").stop().animate({"top": "143px", "opacity": 0}, 500, function(){
+		$(this).css({"display": "none"});
+	});
+});
+$(".navi-show").mouseenter(function(){
+
+});
+$(".navi-show").mouseleave(function(){
+
+});
+
+
+
+
+
+
+
+
 
 
 
