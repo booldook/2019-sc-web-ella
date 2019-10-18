@@ -50,6 +50,7 @@ $(".navi-show").mouseleave(function(){
 });
 
 
+// 배너 - (fade, slide(전체), slide(하나씩), slide(세로))
 
 
 
