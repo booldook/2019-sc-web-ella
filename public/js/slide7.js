@@ -1,18 +1,3 @@
-/* 변수 타입 
-primitive type: 
-	Number(0 == false), 
-	String("" == false), 
-	Boolean, 
-	undefined == false, 
-	null == false
-refernce type: Array, Object
-const a = 5;
-a = 10; // Error
-const b = [];
-b[1] = 10; // No Error
-b = [1, 2, 3]; // Error
-*/
-
 // 전역변수
 var now = 0;
 var interval;
@@ -50,10 +35,10 @@ function init() {
 }
 // 애니메이션
 function ani() {
-	$(".banners").stop().animate({"left": (-720*now)+"px"}, 500, function(){
+	$(".banners").stop().animate({"top": (-380*now)+"px"}, 500, function(){
 		if(now == 5) {
 			now = 0;
-			$(".banners").css("left", 0);
+			$(".banners").css("top", 0);
 			pagerInit();
 			btInit();
 		}

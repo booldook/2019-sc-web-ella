@@ -1,21 +1,5 @@
-/* 변수 타입 
-primitive type: 
-	Number(0 == false), 
-	String("" == false), 
-	Boolean, 
-	undefined == false, 
-	null == false
-refernce type: Array, Object
-const a = 5;
-a = 10; // Error
-const b = [];
-b[1] = 10; // No Error
-b = [1, 2, 3]; // Error
-*/
-
 // 전역변수
 var now = 0;
-var interval;
 
 // 이벤트
 $(".bt-prev").click(function(){
@@ -30,17 +14,11 @@ $(".pager").click(function(){
 	now = $(this).index();
 	init();
 });
-// Interval CallBack
-function intervalCb() {
-	now++;
-	init();
-}
 
 /* 동작 */
 // 시작할 때 한번 실행
 (function () {
 	pagerInit();
-	interval = setInterval(intervalCb, 2000);
 })();
 // 이벤트 발생할 때 실행할 함수
 function init() {
@@ -50,14 +28,7 @@ function init() {
 }
 // 애니메이션
 function ani() {
-	$(".banners").stop().animate({"left": (-720*now)+"px"}, 500, function(){
-		if(now == 5) {
-			now = 0;
-			$(".banners").css("left", 0);
-			pagerInit();
-			btInit();
-		}
-	});
+	$(".banners").stop().animate({"top": (-380*now)+"px"}, 500);
 }
 // 버튼 정렬
 function btInit() {
