@@ -1,5 +1,5 @@
 .banners-tit, .banners-wrap {width: 720px; margin: 0 auto;}
-.banners-wrap {position: relative; margin-bottom: 50px; overflow: hidden;}	/* 화면 */
-.banners {width:3600px; position: relative; display: flex;}	/* 움직일 놈 */
+.banners-wrap {width: 720px; height: 380px; position: relative; margin-bottom: 50px; border: 10px solid red;}	/* 화면 */
+.banners {width:720px; position: relative; display: flex; flex-direction: column;}	/* 움직일 놈 */
 .banner {width:720px; position: relative;}
 .banner-cont {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 60px; color: orange;}
