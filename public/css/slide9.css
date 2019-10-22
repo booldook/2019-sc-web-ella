@@ -1,0 +1,8 @@
+.banners-tit, .banners-wrap {width: 720px; margin: 0 auto;}	
+.banners {width:720px; height: 380px; margin: 0 auto; position: relative;}	/* 화면 */
+.banner {width:720px; position: absolute; z-index: 9;}	/* 움직일 놈 */
+.banner-cont {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 60px; color: orange;}
+.bt-prev, .bt-next {font-size: 50px; font-weight: bold; position: absolute; line-height:70px; border: 4px solid #111; color: #111; border-radius: 50%; top: calc(50% - 25px); text-align: center; width: 80px; height: 80px; background-color: #ccc; opacity: 0.3; transition: all 0.5s; cursor: pointer;}
+.pagers {position: absolute; width: 720px; display: flex; justify-content: center; z-index: 9999; bottom: 20px; left: 0;}
+.pager {padding: 8px; cursor: pointer;}
+.pager.active {color: red;}
