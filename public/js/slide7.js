@@ -15,6 +15,13 @@ $(".pager").click(function(){
 	now = $(this).index();
 	init();
 });
+$(".banners-wrap").mouseover(function(){
+	clearInterval(interval);
+});
+$(".banners-wrap").mouseleave(function(){
+	clearInterval(interval);
+	interval = setInterval(intervalCb, 2000);
+});
 // Interval CallBack
 function intervalCb() {
 	now++;
