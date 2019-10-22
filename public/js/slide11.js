@@ -1,6 +1,35 @@
 // 전역변수
 var now = 0;
 var interval;
+var speed = 500;
+var delay = 2000;
+var cnt = 0;	// Ajax으로 가져온 슬라이드 갯수
+var html = '';
+
+// 시작
+$.ajax({ url: "../json/slide.json", success: slideInit });
+
+// 이벤트
+
+// 동작
+function slideInit(res) {
+	cnt = res.slides.length;
+	for(var i in res.slides) {
+		html  = '<li class="banner">';
+		html += '<img src="'+res.slides[i].src+'" alt="'+res.slides[i].desc+'" class="banner-img">';
+		html += '<h2 class="banner-cont">'+res.slides[i].desc+'</h2>';
+		html += '</li>';
+		$(".banners").append(html);
+		html  = '<div class="pager">●</div>';
+		$(".pagers").append(html);
+	}
+	$(".banners").append($(".banner").eq(0).clone());
+}
+
+
+
+/*
+
 
 // 이벤트
 $(".bt-prev").click(function(){
@@ -28,7 +57,7 @@ function intervalCb() {
 	init();
 }
 
-/* 동작 */
+//동작
 // 시작할 때 한번 실행
 (function () {
 	pagerInit();
@@ -71,5 +100,5 @@ function pagerInit() {
 	$(".pager").removeClass("active");
 	$(".pager").eq(now).addClass("active");
 }
-
+*/
 
