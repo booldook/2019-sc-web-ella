@@ -8,10 +8,6 @@ var html = '';
 
 // 시작
 $.ajax({ url: "../json/slide.json", success: slideInit });
-
-// 이벤트
-
-// 동작
 function slideInit(res) {
 	cnt = res.slides.length;
 	for(var i in res.slides) {
@@ -24,45 +20,40 @@ function slideInit(res) {
 		$(".pagers").append(html);
 	}
 	$(".banners").append($(".banner").eq(0).clone());
+	startInit();
 }
 
-
-
-/*
-
-
 // 이벤트
-$(".bt-prev").click(function(){
-	if(now > 0) now--;
-	init();
-}).hide();
-$(".bt-next").click(function(){
-	if(now < 4) now++;
-	init();
-});
-$(".pager").click(function(){
-	now = $(this).index();
-	init();
-});
-$(".banners-wrap").mouseover(function(){
-	clearInterval(interval);
-});
-$(".banners-wrap").mouseleave(function(){
-	clearInterval(interval);
+function startInit() {
+	$(".bt-prev").click(function(){
+		if(now > 0) now--;
+		init();
+	}).hide();
+	$(".bt-next").click(function(){
+		if(now < 4) now++;
+		init();
+	});
+	$(".pager").click(function(){
+		now = $(this).index();
+		init();
+	});
+	$(".banners-wrap").mouseover(function(){
+		clearInterval(interval);
+	});
+	$(".banners-wrap").mouseleave(function(){
+		clearInterval(interval);
+		interval = setInterval(intervalCb, 2000);
+	});
+	// Interval CallBack
+	function intervalCb() {
+		now++;
+		init();
+	}
+	pagerInit();
 	interval = setInterval(intervalCb, 2000);
-});
-// Interval CallBack
-function intervalCb() {
-	now++;
-	init();
 }
 
 //동작
-// 시작할 때 한번 실행
-(function () {
-	pagerInit();
-	interval = setInterval(intervalCb, 2000);
-})();
 // 이벤트 발생할 때 실행할 함수
 function init() {
 	ani();
@@ -100,5 +91,5 @@ function pagerInit() {
 	$(".pager").removeClass("active");
 	$(".pager").eq(now).addClass("active");
 }
-*/
+
 
