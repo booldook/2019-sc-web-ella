@@ -1,54 +1,71 @@
-/* 변수 타입 
-primitive type: 
-	Number(0 == false), 
-	String("" == false), 
-	Boolean, 
-	undefined == false, 
-	null == false
-refernce type: Array, Object
-const a = 5;
-a = 10; // Error
-const b = [];
-b[1] = 10; // No Error
-b = [1, 2, 3]; // Error
-*/
-
 // 전역변수
 var now = 0;
 var interval;
+var speed = 500;
+var delay = 2000;
+var cnt = 0;	// Ajax으로 가져온 슬라이드 갯수
+var html = '';
+var ajax = new XMLHttpRequest();
 
-// 이벤트
-$(".bt-prev").click(function(){
-	if(now > 0) now--;
-	init();
-}).hide();
-$(".bt-next").click(function(){
-	if(now < 4) now++;
-	init();
-});
-$(".pager").click(function(){
-	now = $(this).index();
-	init();
-});
-$(".banners-wrap").mouseover(function(){
-	clearInterval(interval);
-});
-$(".banners-wrap").mouseleave(function(){
-	clearInterval(interval);
-	interval = setInterval(intervalCb, 2000);
-});
-// Interval CallBack
-function intervalCb() {
-	now++;
-	init();
+// 시작
+ajax.onreadystatechange = slideInit;	// CallBack Init
+ajax.open("GET", "../json/slide.json");
+ajax.send();
+
+function slideInit() {
+	if(this.readyState == 4 && this.status == 200) {
+		/* 
+		console.log(this.responseText);	// String형식의 json 원본
+		console.log(JSON.parse(this.responseText));	// String -> JS Object
+		console.log(JSON.stringify(JSON.parse(this.responseText)));	// JS Object -> String 
+		*/
+		var res = JSON.parse(this.responseText);
+		cnt = res.slides.length;
+		for(var i in res.slides) {
+			html  = '<li class="banner">';
+			html += '<img src="'+res.slides[i].src+'" alt="'+res.slides[i].desc+'" class="banner-img">';
+			html += '<h2 class="banner-cont">'+res.slides[i].desc+'</h2>';
+			html += '</li>';
+			$(".banners").append(html);
+			html  = '<div class="pager">●</div>';
+			$(".pagers").append(html);
+		}
+		$(".banners").append($(".banner").eq(0).clone());
+		startInit();
+	}
 }
 
-/* 동작 */
-// 시작할 때 한번 실행
-(function () {
+// 이벤트
+function startInit() {
+	$(".bt-prev").click(function(){
+		if(now > 0) now--;
+		init();
+	}).hide();
+	$(".bt-next").click(function(){
+		if(now < 4) now++;
+		init();
+	});
+	$(".pager").click(function(){
+		now = $(this).index();
+		init();
+	});
+	$(".banners-wrap").mouseover(function(){
+		clearInterval(interval);
+	});
+	$(".banners-wrap").mouseleave(function(){
+		clearInterval(interval);
+		interval = setInterval(intervalCb, 2000);
+	});
+	// Interval CallBack
+	function intervalCb() {
+		now++;
+		init();
+	}
 	pagerInit();
 	interval = setInterval(intervalCb, 2000);
-})();
+}
+
+//동작
 // 이벤트 발생할 때 실행할 함수
 function init() {
 	ani();
