@@ -80,7 +80,6 @@ function init() {
 }
 // 애니메이션
 function ani() {
-	var aniEasy = new AniEasy({elem: ".banners"});
 	aniEasy.animate({"left": (-720*now)+"px"}, 500, function(){
 		if(now == 5) {
 			now = 0;

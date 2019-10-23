@@ -2,6 +2,7 @@ var AniEasy = (function(){
 	function AniEasy(obj) {
 		this.elem = obj.elem == undefined ? ".ani-easy" : obj.elem;
 		this.elem = document.querySelector(this.elem);
+		this.interval;
 	}
 	return AniEasy;
 })();
@@ -17,17 +18,16 @@ AniEasy.prototype.animate = function(css, speed, cb) {
 	var pos = Number(this.cssValue.replace("px", ""));
 	var tar = Number(getComputedStyle(this.elem)[this.cssName].replace("px", ""));
 	// console.log(pos, tar);
-	this.interval;
-	interval = setInterval(ani, 20, this);
+	clearInterval(this.interval);
+	this.interval = setInterval(ani, 20, this);
 	function ani(obj) {
-		if(Math.ceil(tar) == pos) {
-			clearInterval(this.interval);
+		if(Math.ceil(Math.abs(tar)) == Math.abs(pos)) {
+			clearInterval(obj.interval);
 			obj.elem.style[obj.cssName] = pos+"px";
 			if(obj.cb) obj.cb();
 		}
 		else {
 			tar += (pos - tar) * 0.15;
-			console.log(tar);
 			obj.elem.style[obj.cssName] = tar+"px";
 		}
 	}
