@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>순수 JS Animation</title>
+	<style>
+	.box, .box2 {width: 100px; height: 100px; background-color: red; position: absolute; left: 50px; top: 50px;}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+	<script src="../js/booldook.animation.1.0.0.js"></script>
+	<script>
+		var ani = new AniEasy({elem: ".box"});
+		ani.animate({"left": "-1000px"}, 500);
+	</script>
+</body>
+</html>
