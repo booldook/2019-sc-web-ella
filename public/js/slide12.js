@@ -91,22 +91,24 @@ function ani() {
 // 버튼 정렬
 function btInit() {
 	if(now == 0) {
-		$(".bt-prev").hide();
-		$(".bt-next").show();
+		document.querySelector(".bt-prev").style.display = "none";
+		document.querySelector(".bt-next").style.display = "block";
 	}
 	else if(now == 4) {
-		$(".bt-prev").show();
-		$(".bt-next").hide();
+		document.querySelector(".bt-prev").style.display = "block";
+		document.querySelector(".bt-next").style.display = "none";
 	}
 	else {
-		$(".bt-prev").show();
-		$(".bt-next").show();
+		document.querySelector(".bt-prev").style.display = "block";
+		document.querySelector(".bt-next").style.display = "block";
 	}
 }
 // 페이저 정렬
 function pagerInit() {
-	$(".pager").removeClass("active");
-	$(".pager").eq(now).addClass("active");
+	document.querySelectorAll(".pager").forEach(function(item, key) {
+		if(key == now) item.classList.add("active");
+		else item.classList.remove("active");
+	});
 }
 
 
