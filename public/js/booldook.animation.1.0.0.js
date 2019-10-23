@@ -17,7 +17,6 @@ AniEasy.prototype.animate = function(css, speed, cb) {
 	}
 	var pos = Number(this.cssValue.replace("px", ""));
 	var tar = Number(getComputedStyle(this.elem)[this.cssName].replace("px", ""));
-	// console.log(pos, tar);
 	clearInterval(this.interval);
 	this.interval = setInterval(ani, 20, this);
 	function ani(obj) {
