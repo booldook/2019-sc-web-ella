@@ -6,7 +6,7 @@ var AniEasy = (function(){
 	return AniEasy;
 })();
 
-AniEasy.prototype.animate = function(css, speed) {
+AniEasy.prototype.animate = function(css, speed, cb) {
 	this.css = css;
 	this.speed = speed;
 	for(var key in this.css) {
@@ -18,9 +18,16 @@ AniEasy.prototype.animate = function(css, speed) {
 	// console.log(pos, tar);
 	var interval = setInterval(ani, 20, this);
 	function ani(obj) {
-		tar += (pos - tar) * 0.15;
-		console.log(tar);
-		obj.elem.style[obj.cssName] = tar+"px";
+		if(Math.ceil(tar) == pos) {
+			clearInterval(interval);
+			obj.elem.style[obj.cssName] = pos+"px";
+			if(!cb) cb();
+		}
+		else {
+			tar += (pos - tar) * 0.15;
+			console.log(tar);
+			obj.elem.style[obj.cssName] = tar+"px";
+		}
 	}
 }
 
