@@ -9,6 +9,7 @@ var AniEasy = (function(){
 AniEasy.prototype.animate = function(css, speed, cb) {
 	this.css = css;
 	this.speed = speed;
+	this.cb = (typeof cb === 'undefined') ? false : (typeof cb === 'function') ? cb : false;
 	for(var key in this.css) {
 		this.cssName = key;
 		this.cssValue = this.css[key];
@@ -21,7 +22,7 @@ AniEasy.prototype.animate = function(css, speed, cb) {
 		if(Math.ceil(tar) == pos) {
 			clearInterval(interval);
 			obj.elem.style[obj.cssName] = pos+"px";
-			if(!cb) cb();
+			if(obj.cb) obj.cb();
 		}
 		else {
 			tar += (pos - tar) * 0.15;
