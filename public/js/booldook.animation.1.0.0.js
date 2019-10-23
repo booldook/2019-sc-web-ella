@@ -10,13 +10,17 @@ AniEasy.prototype.animate = function(css, speed) {
 	this.css = css;
 	this.speed = speed;
 	for(var key in this.css) {
-		console.log(key);
-		console.log(this.css[key]);
-		this.interval;
-		interval = setInterval(ani, 500);
+		this.cssName = key;
+		this.cssValue = this.css[key];
 	}
-	function ani() {
-		//console.log(AniEasy.css["left"]);
+	var pos = Number(this.cssValue.replace("px", ""));
+	var tar = Number(getComputedStyle(this.elem)[this.cssName].replace("px", ""));
+	// console.log(pos, tar);
+	var interval = setInterval(ani, 20, this);
+	function ani(obj) {
+		tar += (pos - tar) * 0.15;
+		console.log(tar);
+		obj.elem.style[obj.cssName] = tar+"px";
 	}
 }
 
