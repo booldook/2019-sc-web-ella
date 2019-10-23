@@ -48,19 +48,16 @@ function startInit() {
 	});
 	document.querySelectorAll(".pager").forEach(function(item, key){
 		item.addEventListener("click", function(e){
-			console.log(this.dataset["idx"]);
-			/*
-			now = $(this).index();
+			now = this.dataset["idx"];
 			init();
-			*/
 		});
 	});
 	
 	
-	$(".banners-wrap").mouseover(function(){
+	document.querySelector(".banners-wrap").addEventListener("mouseover", function(){
 		clearInterval(interval);
 	});
-	$(".banners-wrap").mouseleave(function(){
+	document.querySelector(".banners-wrap").addEventListener("mouseleave", function(){
 		clearInterval(interval);
 		interval = setInterval(intervalCb, 2000);
 	});
