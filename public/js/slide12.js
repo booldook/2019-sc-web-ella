@@ -30,9 +30,7 @@ function slideInit() {
 		}
 		document.querySelector(".banners").innerHTML = html[0];
 		document.querySelector(".pagers").innerHTML = html[1];
-		var child = document.querySelectorAll(".banner")[0].cloneNode(true);
-		console.log(child);
-		//document.querySelector(".banners").innerHTML = child;
+		document.querySelector(".banners").appendChild(document.querySelectorAll(".banner")[0].cloneNode(true));
 		startInit();
 	}
 }
