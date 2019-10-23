@@ -4,7 +4,7 @@ var interval;
 var speed = 500;
 var delay = 2000;
 var cnt = 0;	// Ajax으로 가져온 슬라이드 갯수
-var html = '';
+var html = ["", ""];
 var ajax = new XMLHttpRequest();
 
 // 시작
@@ -22,15 +22,17 @@ function slideInit() {
 		var res = JSON.parse(this.responseText);
 		cnt = res.slides.length;
 		for(var i in res.slides) {
-			html  = '<li class="banner">';
-			html += '<img src="'+res.slides[i].src+'" alt="'+res.slides[i].desc+'" class="banner-img">';
-			html += '<h2 class="banner-cont">'+res.slides[i].desc+'</h2>';
-			html += '</li>';
-			$(".banners").append(html);
-			html  = '<div class="pager">●</div>';
-			$(".pagers").append(html);
+			html[0] += '<li class="banner">';
+			html[0] += '<img src="'+res.slides[i].src+'" alt="'+res.slides[i].desc+'" class="banner-img">';
+			html[0] += '<h2 class="banner-cont">'+res.slides[i].desc+'</h2>';
+			html[0] += '</li>';
+			html[1] += '<div class="pager">●</div>';
 		}
-		$(".banners").append($(".banner").eq(0).clone());
+		document.querySelector(".banners").innerHTML = html[0];
+		document.querySelector(".pagers").innerHTML = html[1];
+		var child = document.querySelectorAll(".banner")[0].cloneNode(true);
+		console.log(child);
+		//document.querySelector(".banners").innerHTML = child;
 		startInit();
 	}
 }
