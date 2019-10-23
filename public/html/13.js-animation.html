@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>순수 JS Animation</title>
+	<style>
+	.box {width: 100px; height: 100px; background-color: red; position: absolute; left: 50px; top: 50px;}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script>
+	// Easing - 갈놈 += (목표값 - 갈놈) * 0.5(1보다 작은 수)
+	var dist = 700;
+	var frameDist = 700/50;	// 14
+	var pos = 50;
+	var item = document.querySelector(".box");
+	var interval;
+	interval = setInterval(ani, 10);
+	function ani() {
+		if(pos < 700 - 2) {
+			pos += (dist - pos) * 0.05;
+			item.style.left = pos+"px";
+		}
+		else {
+			clearInterval(interval);
+			item.style.left = dist+"px";
+		}
+	}
+	</script>
+</body>
+</html>
