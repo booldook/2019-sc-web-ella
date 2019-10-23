@@ -26,7 +26,7 @@ function slideInit() {
 			html[0] += '<img src="'+res.slides[i].src+'" alt="'+res.slides[i].desc+'" class="banner-img">';
 			html[0] += '<h2 class="banner-cont">'+res.slides[i].desc+'</h2>';
 			html[0] += '</li>';
-			html[1] += '<div class="pager">●</div>';
+			html[1] += '<div class="pager" data-idx="'+i+'">●</div>';
 		}
 		document.querySelector(".banners").innerHTML = html[0];
 		document.querySelector(".pagers").innerHTML = html[1];
@@ -37,18 +37,26 @@ function slideInit() {
 
 // 이벤트
 function startInit() {
-	$(".bt-prev").click(function(){
+	document.querySelector(".bt-prev").style.display = "none";
+	document.querySelector(".bt-prev").addEventListener("click", function(){
 		if(now > 0) now--;
 		init();
-	}).hide();
-	$(".bt-next").click(function(){
+	})
+	document.querySelector(".bt-next").addEventListener("click", function(){
 		if(now < 4) now++;
 		init();
 	});
-	$(".pager").click(function(){
-		now = $(this).index();
-		init();
+	document.querySelectorAll(".pager").forEach(function(item, key){
+		item.addEventListener("click", function(e){
+			console.log(this.dataset["idx"]);
+			/*
+			now = $(this).index();
+			init();
+			*/
+		});
 	});
+	
+	
 	$(".banners-wrap").mouseover(function(){
 		clearInterval(interval);
 	});
