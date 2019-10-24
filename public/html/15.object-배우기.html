@@ -35,11 +35,12 @@ var Hong = (function(){
 		this.firstName = fName;
 		this.lastName = lName;
 	}
-	Hong.prototype.fullName = function(){
-		return this.lastName + " " + this.firstName;
-	}
 	return Hong;
 })();
+
+Hong.prototype.fullName = function(){
+	return this.lastName + " " + this.firstName;
+}
 
 var hong2 = new Hong("홍", "길동");
 var hong3 = new Hong("홍", "길순");
