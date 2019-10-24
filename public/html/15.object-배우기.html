@@ -1,0 +1,48 @@
+<script>
+var Temp = (function(){
+	function Temp() {
+		this.name = "홍길동"
+	}
+	return Temp;
+})();
+temp1 = new Temp();
+temp2 = new Temp();
+temp2.name = "홍길순";
+console.log(temp1);
+console.log(temp2);
+
+var Obj = {
+	name: "홍길동",
+}
+var Obj2 = Obj;
+Obj2.name = "홍길순";
+console.log(Obj);
+console.log(Obj2);
+console.clear();
+
+// 리터럴 객체
+var hong = {
+	firstName: "길동",
+	lastName: "홍",
+	fullName: function(){
+		return this.lastName + " " + this.firstName;
+	}
+}
+console.log(hong.fullName());
+
+var Hong = (function(){
+	function Hong(lName, fName) {
+		this.firstName = fName;
+		this.lastName = lName;
+	}
+	Hong.prototype.fullName = function(){
+		return this.lastName + " " + this.firstName;
+	}
+	return Hong;
+})();
+
+var hong2 = new Hong("홍", "길동");
+var hong3 = new Hong("홍", "길순");
+console.log(hong2.fullName());
+console.log(hong3.fullName());
+</script>
