@@ -11,6 +11,5 @@ function wheelFn(){
 	else (n > 0) ? wheelAni((n - 1) * hei) : "";	// 위로 휠
 }
 function wheelAni(pos) {
-	console.log(pos);
 	$("html, body").stop().animate({"scrollTop": pos}, 1000);
 }
