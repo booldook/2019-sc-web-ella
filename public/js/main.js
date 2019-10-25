@@ -2,6 +2,9 @@
 // 상단 배너 가리기
 var topClose = $.cookie("top-banner-close");
 if(topClose) $(".top-banner").hide();
+$("body").click(function(){
+	$(".sch-layer").hide();
+});
 
 
 /* header */
@@ -13,7 +16,7 @@ $("#bt-top-close").click(function(){
 });
 */
 // cookie로 제한시간을 10분 줄 때 
-$("#bt-top-close").click(function(){
+$("#bt-top-close").click(function(e){
 	$(".top-banner").stop().slideUp(300);
 	var d = new Date();
 	d.setTime(d.getTime() + 10*60*1000);	// 10분동안 쿠키 유지
@@ -29,6 +32,15 @@ $(".sel-top li").click(function(){
 	$(this).parent().parent().find(".sel-top-img").attr("src", $(this).find("img").attr("src"));
 	$(this).parent().parent().find(".sel-top-txt").text($(this).find("span").text());
 	$(this).parent().prev().trigger("click");
+});
+
+// Search
+$(".sch-txt").click(function(e){
+	e.stopPropagation();
+	$(".sch-layer").show();
+});
+$(".sch-layer").click(function(e){
+	e.stopPropagation();
 });
 
 // 메인 네비게이션
