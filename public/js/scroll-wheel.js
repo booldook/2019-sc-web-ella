@@ -16,3 +16,9 @@ function wheelAni(pos, prevPage, nowPage) {
 
 	});
 }
+
+$(".navi").click(function(){
+	var n = $(this).index();
+	var hei = $(window).outerHeight();
+	wheelAni(n * hei);
+});
