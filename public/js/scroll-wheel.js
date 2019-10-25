@@ -13,3 +13,9 @@ function wheelFn(){
 function wheelAni(pos) {
 	$("html, body").stop().animate({"scrollTop": pos}, 1000);
 }
+
+$(".navi").click(function(){
+	var n = $(this).index();
+	var hei = $(window).outerHeight();
+	wheelAni(n * hei);
+});
