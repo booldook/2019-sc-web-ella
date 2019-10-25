@@ -33,4 +33,3 @@ mysql_conn.js //데이터베이스 id, pw 가 포함되어 있으므로 git에 �
 
 ### . 프로젝트 루트에 public, modules, views 폴더를 생성하고 프로젝트를 시작한다.
 
-https://www.youtube.com/watch?v=12fJnASvoj0&feature=youtu.be
