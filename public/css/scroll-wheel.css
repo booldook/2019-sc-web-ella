@@ -1,6 +1,7 @@
 html, body {height: 100%;}
 .wrap {height: 100%;}
 .page {height: 100%; position: relative;}
+nav {z-index: 9999;}
 .page .page-tit {transform: translate(-50%, -50%); position: absolute; left: 50%; top: 50%; color: #fff; font-size: 3rem;}
 .page1 {background-color: #78d2f0;}
 .page2 {background-color: #8cbe6a;}
