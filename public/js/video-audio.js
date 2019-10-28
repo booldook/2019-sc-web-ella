@@ -1,4 +1,3 @@
-$elmt = $(".videos")
 $(".videos").vegas({
 	slides: [
 		{
