@@ -171,7 +171,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative; }
+	.main-bans {position: relative; max-width: 500px; margin: auto;}
 	.main-ban {position: relative; width: 300%; display: flex;}
 	.main-ban > li {position: relative; flex: 100% 1 1;}
 	.main-bans > .pager-prev,

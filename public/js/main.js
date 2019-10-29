@@ -65,62 +65,56 @@ $(".navi-show").mouseleave(function(){
 // 배너 - (fade, slide(전체), slide(하나씩), slide(세로))
 // 메인 배너
 (function(){
-	// 초기화
-	$(".main-ban").append($(".main-ban > li").eq(0).clone()).css({"width": "400%"});
-	var interval;
-	var len = $(".main-ban > li").length;
+	var now = 0;
 	var speed = 500;
 	var delay = 3000;
-	var now = 0;
-	// 이벤트
-	interval = setInterval(intervalFn, delay);
-	$(".pager-prev").click(prevFn);
-	$(".pager-next").click(nextFn);
-	$(".main-bans").mouseover(hoverFn).mouseleave(leaveFn);
-	// 이벤트 드리븐
-	function intervalFn() {
-		if(now == len - 1) {
-			now = 1;
-			$(".main-ban").css({"left": 0});
-		}
-		else now++;
-		ani();
+	var interval;
+	var arr = [];
+	var $li = $(".main-ban").children();
+	var len = $li.length;
+	init();
+	interval = setInterval(ani, delay, "-200%");
+	function init() {
+		arr = [];
+		// prev
+		if(now == 0) arr.push(len - 1);
+		else arr.push(now - 1);
+		// now
+		arr.push(now);
+		// next
+		if(now == len - 1) arr.push(0);
+		else arr.push(now + 1);
+		$(".main-ban").empty();
+		$(".main-ban").append($li[arr[0]]);
+		$(".main-ban").append($li[arr[1]]);
+		$(".main-ban").append($li[arr[2]]);
+		$(".main-ban").css({"left": "-100%"});
+	}	
+	function ani(tar) {
+		$(".main-ban").stop().animate({"left": tar}, speed, function(){
+			if(tar == 0) {
+				if(now == 0) now = len - 1;
+				else now--;
+			}
+			else {
+				if(now == len - 1) now = 0;
+				else now++;
+			}
+			init();
+		});
 	}
-	function prevFn() {
-		if(now > 0) {
-			now--;
-			ani();
-		}
-	}
-	function nextFn() {
-		if(now < len - 2) {
-			now++;
-			ani();
-		}
-	}
-	function hoverFn() {
+	$(".pager-prev").click(function(){
+		ani(0);
+	});
+	$(".pager-next").click(function(){
+		ani("-200%");
+	});
+	$(".main-bans").mouseover(function(){
 		clearInterval(interval);
-	}
-	function leaveFn() {
+	}).mouseleave(function(){
 		clearInterval(interval);
-		interval = setInterval(intervalFn, delay);
-	}
-	//동작 함수
-	function ani() {
-		$(".main-ban").stop().animate({"left": -100*now+"%"}, speed);
-		if(now == 0 || now == len - 1) {
-			$(".pager-prev").hide();
-			$(".pager-next").show();
-		}
-		else if(now == len - 2) {
-			$(".pager-prev").show();
-			$(".pager-next").hide();
-		}
-		else {
-			$(".pager-prev").show();
-			$(".pager-next").show();
-		}
-	}
+		interval = setInterval(ani, delay, "-200%");
+	});
 })();
 
 
