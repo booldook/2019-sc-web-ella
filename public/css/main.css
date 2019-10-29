@@ -171,7 +171,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative; overflow: hidden;}
+	.main-bans {position: relative; }
 	.main-ban {position: relative; width: 300%; display: flex;}
 	.main-ban > li {position: relative; flex: 100% 1 1;}
 	.main-bans > .pager-prev,
@@ -185,8 +185,8 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	.ban-conts > .ban-tit {font-size: 2.5rem; font-weight: 900; padding: 0.5rem 0;}
 	.ban-conts > .ban-bar {width: 40px; border-bottom: 2px solid #111; display: inline-block;}
 	.ban-conts > .ban-cont {font-size: 0.75rem; color: #444; padding: 1rem 0 1.5rem 0;}
-	.main-ban > :nth-child(1) > .ban-conts {left: 20%;}
-	.main-ban > :nth-child(3) > .ban-conts {right: 20%;}
+	.main-ban .ban-conts.lt20 {left: 20%;}
+	.main-ban .ban-conts.rt20 {right: 20%;}
 
 	.bests {margin-top: 4rem; position: relative;}
 	.best-items {display: flex; justify-content: space-between; align-items: flex-start;}

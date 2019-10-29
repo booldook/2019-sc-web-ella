@@ -63,7 +63,65 @@ $(".navi-show").mouseleave(function(){
 
 
 // 배너 - (fade, slide(전체), slide(하나씩), slide(세로))
-
+// 메인 배너
+(function(){
+	// 초기화
+	$(".main-ban").append($(".main-ban > li").eq(0).clone()).css({"width": "400%"});
+	var interval;
+	var len = $(".main-ban > li").length;
+	var speed = 500;
+	var delay = 3000;
+	var now = 0;
+	// 이벤트
+	interval = setInterval(intervalFn, delay);
+	$(".pager-prev").click(prevFn);
+	$(".pager-next").click(nextFn);
+	$(".main-bans").mouseover(hoverFn).mouseleave(leaveFn);
+	// 이벤트 드리븐
+	function intervalFn() {
+		if(now == len - 1) {
+			now = 1;
+			$(".main-ban").css({"left": 0});
+		}
+		else now++;
+		ani();
+	}
+	function prevFn() {
+		if(now > 0) {
+			now--;
+			ani();
+		}
+	}
+	function nextFn() {
+		if(now < len - 2) {
+			now++;
+			ani();
+		}
+	}
+	function hoverFn() {
+		clearInterval(interval);
+	}
+	function leaveFn() {
+		clearInterval(interval);
+		interval = setInterval(intervalFn, delay);
+	}
+	//동작 함수
+	function ani() {
+		$(".main-ban").stop().animate({"left": -100*now+"%"}, speed);
+		if(now == 0 || now == len - 1) {
+			$(".pager-prev").hide();
+			$(".pager-next").show();
+		}
+		else if(now == len - 2) {
+			$(".pager-prev").show();
+			$(".pager-next").hide();
+		}
+		else {
+			$(".pager-prev").show();
+			$(".pager-next").show();
+		}
+	}
+})();
 
 
 
