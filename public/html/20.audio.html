@@ -33,15 +33,16 @@
 		<div class="player-wrap my-3">
 			<div class="snd-ctrls">
 				<i class="fas fa-play-circle" id="bt-play"></i>
-				<i class="fas fa-pause-circle" id="bt-pause"></i>
+				<i class="fas fa-pause-circle" id="bt-pause" style="display: none;"></i>
 				<i class="fas fa-stop-circle" id="bt-stop"></i>
-				<i class="fas fa-volume-mute" id="bt-mute"></i>
+				<i class="fas fa-volume-mute" id="bt-muted" style="display: none;"></i>
+				<i class="fas fa-volume-up" id="bt-up"></i>
 				<input type="range" id="volumn" min="0" max="100" step="10">
 			</div>
 			<div class="snd-chois mt-2">
 				<select id="snd-sel" class="form-control">
 					<option value="../music/music1.mp3">시끄러운 음악</option>
-					<option value="../music/music2.mp3">조용한 음악</option>
+					<option value="../music/music2.mp3" selected>조용한 음악</option>
 					<option value="../music/music3.mp3">잔잔한 음악</option>
 				</select>
 			</div>

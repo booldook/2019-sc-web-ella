@@ -1,0 +1,25 @@
+$("#bt-play").click(function(){
+	$(this).hide();
+	$("#bt-pause").show();
+});
+$("#bt-pause").click(function(){
+	$(this).hide();
+	$("#bt-play").show();
+});
+$("#bt-stop").click(function(){
+
+});
+$("#bt-muted").click(function(){
+	$(this).hide();
+	$("#bt-up").show();
+});
+$("#bt-up").click(function(){
+	$(this).hide();
+	$("#bt-muted").show();
+});
+$("#volumn").change(function(){
+	console.log($(this).val());
+});
+$("#snd-sel").change(function(){
+	console.log($(this).val());
+});
