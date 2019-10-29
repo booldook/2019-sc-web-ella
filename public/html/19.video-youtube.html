@@ -23,29 +23,11 @@
 
 <body>
 	<div class="videos">
-		<div id="ytbg" data-youtube="https://www.youtube.com/watch?v=SyeneNTevr8"></div>
 		<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/eQNnX_b9ZnI?autoplay=1&cc_load_policy=1&disablekb=1&enablejsapi=1&loop=1&modestbranding=1&playsinline=1&color=white&controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		<div id="ytid" data-youtube="https://www.youtube.com/watch?v=SyeneNTevr8"></div>
 	</div>
 	<script>
 		$('[data-youtube]').youtube_background();
-		/* ytp = new YT.Player($('[data-youtube]'), {
-			height: '1080',
-			width: '1920',
-			videoId: ytid,
-			playerVars: {
-				'controls': 0,
-				'autoplay': 1,
-				'mute': 1,
-				'loop': 1,
-				'rel': 0,
-				'showinfo': 0,
-				'modestbranding': 1
-			},
-			events: {
-				'onReady': onVideoPlayerReady,
-				'onStateChange': onVideoStateChange
-			}
-		}); */
 	</script>
 </body>
 
