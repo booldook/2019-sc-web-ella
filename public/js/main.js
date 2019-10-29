@@ -75,15 +75,9 @@ $(".navi-show").mouseleave(function(){
 	init();
 	interval = setInterval(ani, delay, "-200%");
 	function init() {
-		arr = [];
-		// prev
-		if(now == 0) arr.push(len - 1);
-		else arr.push(now - 1);
-		// now
-		arr.push(now);
-		// next
-		if(now == len - 1) arr.push(0);
-		else arr.push(now + 1);
+		arr[0] = (now == 0) ? len - 1 : now - 1;	// prev
+		arr[1] = now;	// now
+		arr[2] = (now == len - 1) ? arr[2] = 0 : arr[2] = now + 1;	// next
 		$(".main-ban").empty();
 		$(".main-ban").append($li[arr[0]]);
 		$(".main-ban").append($li[arr[1]]);
@@ -103,10 +97,10 @@ $(".navi-show").mouseleave(function(){
 			init();
 		});
 	}
-	$(".pager-prev").click(function(){
+	$(".pager-prev").click(function(e){
 		ani(0);
 	});
-	$(".pager-next").click(function(){
+	$(".pager-next").click(function(e){
 		ani("-200%");
 	});
 	$(".main-bans").mouseover(function(){
