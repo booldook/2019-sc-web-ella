@@ -86,14 +86,7 @@ $(".navi-show").mouseleave(function(){
 	}	
 	function ani(tar) {
 		$(".main-ban").stop().animate({"left": tar}, speed, function(){
-			if(tar == 0) {
-				if(now == 0) now = len - 1;
-				else now--;
-			}
-			else {
-				if(now == len - 1) now = 0;
-				else now++;
-			}
+			(tar == 0) ? (now == 0) ? now = len - 1: now-- : (now == len - 1) ? now = 0 : now++;
 			init();
 		});
 	}
