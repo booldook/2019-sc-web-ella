@@ -24,32 +24,37 @@ var FxSlide = (function(){
 		this.cnt = obj.cnt ? Number(obj.cnt) : 1;
 		this.speed = obj.speed ? Number(obj.speed) : 500;
 		this.delay = obj.delay ? Number(obj.delay) : 3000;
+		this.tar = 100 / this.cnt;
+		this.width = this.tar * 2 + 100;
+		this.dir = -1;
 		this.interval = null;
 		this.arr = [];
 		this.init();
+		this.interval = setInterval(this.ani, this.delay, this);
 	}
 	FxSlide.prototype.init = function() {
+		console.log(this);
 		this.arr = [];
 		this.arr.push((this.now == 0) ? this.len - 1 : this.now - 1); // 왼쪽놈(prev)
 		this.arr.push(this.now); // 나(now)
 		for(var i=0; i<this.cnt; i++) this.arr.push((this.now + i + 1) % this.len);	// 오른쪽놈(next)
 		this.slides.empty();
 		for(i in this.arr) this.slides.append($(this.slide[this.arr[i]]).clone());
+		this.slides.css({"width": this.width+"%", "left": (this.dir * this.tar) + "%"});
+	}
+	FxSlide.prototype.ani = function(obj) {
+		console.log(obj);
+		obj.slides.stop().animate({"left": (obj.dir * obj.tar * 2) + "%"}, obj.speed, function(){
+			if(obj.dir == 0) (obj.now == 0) ? obj.now = obj.len - 1 : obj.now--;
+			else (obj.now == obj.len - 1) ? obj.now = 0 : obj.now++;
+			obj.init();
+		});
 	}
 	return FxSlide;
 
+	/*
 	init();
 	interval = setInterval(ani, delay, "-200%");
-	function init() {
-		arr[0] = (now == 0) ? len - 1 : now - 1;	// prev
-		arr[1] = now;	// now
-		arr[2] = (now == len - 1) ? arr[2] = 0 : arr[2] = now + 1;	// next
-		$(".main-ban").empty();
-		$(".main-ban").append($li[arr[0]]);
-		$(".main-ban").append($li[arr[1]]);
-		$(".main-ban").append($li[arr[2]]);
-		$(".main-ban").css({"left": "-100%"});
-	}	
 	function ani(tar) {
 		$(".main-ban").stop().animate({"left": tar}, speed, function(){
 			(tar == 0) ? (now == 0) ? now = len - 1: now-- : (now == len - 1) ? now = 0 : now++;
@@ -68,4 +73,5 @@ var FxSlide = (function(){
 		clearInterval(interval);
 		interval = setInterval(ani, delay, "-200%");
 	});
+	*/
 })();
