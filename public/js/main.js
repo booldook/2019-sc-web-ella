@@ -61,10 +61,14 @@ $(".navi-show").mouseleave(function(){
 	});
 });
 
+// fx-slide : 메인 배너
+var mainBanner = new FxSlide({slides: $(".main-ban")});
+
+
 
 // 배너 - (fade, slide(전체), slide(하나씩), slide(세로))
 // 메인 배너
-(function(){
+/* (function(){
 	var now = 0;
 	var speed = 500;
 	var delay = 3000;
@@ -102,7 +106,7 @@ $(".navi-show").mouseleave(function(){
 		clearInterval(interval);
 		interval = setInterval(ani, delay, "-200%");
 	});
-})();
+})(); */
 
 
 
