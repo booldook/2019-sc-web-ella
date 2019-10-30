@@ -52,8 +52,8 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .best-next {width: 30px; height: 30px; border: 1px solid #111; border-radius: 50%; text-align: center; line-height: 30px; font-family: 'Poppins', sans-serif; color: #111; background-color: #f9f9f9; transition: all 1s; position: absolute; top: calc(50% - 15px); font-weight: bold; font-size: 1.25rem; cursor: pointer; z-index: 999;}
 .best-prev:hover,
 .best-next:hover {color: #f9f9f9; background-color: #111;} 
-.best-prev {left: -15px;}
-.best-next {right: -15px;}
+.best-prev {left: 0;}
+.best-next {right: 0;}
 
 /* 제목에 사이드 라인 주기 */
 .line-tit {border-bottom: 1px solid #ccc; font-size: 1.25rem; text-align: center; font-weight: 900;}
@@ -171,7 +171,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative; }
+	.main-bans {position: relative; overflow: hidden;}
 	.main-ban {position: relative; width: 300%; display: flex;}
 	.main-ban > li {position: relative; flex: 100% 1 1;}
 	.main-bans > .pager-prev,
@@ -189,8 +189,9 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 	.main-ban .ban-conts.rt20 {right: 20%;}
 
 	.bests {margin-top: 4rem; position: relative;}
-	.best-items {display: flex; justify-content: space-between; align-items: flex-start;}
-	.best-item {flex: 18% 0 1; position: relative; background-color: #111; overflow: hidden; cursor: pointer;}
+	.best-wrap {position: relative; overflow: hidden;}
+	.best-items {display: flex; justify-content: space-between; align-items: flex-start; position:relative;}
+	.best-item {flex: 20% 0 1; margin: 0 1%; position: relative; background-color: #111; overflow: hidden; cursor: pointer;}
 	.best-item > img {transition: all 1s;}
 	.best-item:hover > img {transform: scale(1.2); opacity: 0.8;}
 	.best-item:hover > .underbar:after {width: 100%;}

@@ -63,6 +63,12 @@ $(".navi-show").mouseleave(function(){
 
 // fx-slide : 메인 배너
 var mainBanner = new FxSlide({slides: $(".main-ban"), cnt: 1});
+var bestBanner = new FxSlide({
+	slides: $(".best-items"), 
+	cnt: 5, 
+	prev: $(".best-prev"),
+	next: $(".best-next"),
+});
 
 
 
