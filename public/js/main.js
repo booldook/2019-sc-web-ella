@@ -75,10 +75,16 @@ var bestBanner = new FxSlide({
 	next: $("#best-next"),
 });
 var sellerBanner = new FxSlide({
-	slides: $(".common-items"), 
+	slides: $("#seller-slide"), 
 	cnt: 3, 
 	prev: $("#seller-prev"),
 	next: $("#seller-next"),
+});
+var sellerBanner2 = new FxSlide({
+	slides: $("#seller-slide2"), 
+	cnt: 3, 
+	prev: $("#seller-prev2"),
+	next: $("#seller-next2"),
 });
 
 
