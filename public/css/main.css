@@ -16,7 +16,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .bt-rev.invert:hover {color: #f9f9f9; background-color: #111;}
 
 /* common-items */
-.common-items {display: flex; justify-content: space-between;}
+.common-items {display: flex; justify-content: space-between; position: relative;}
 .common-items > .common-item {flex: 33.3333% 0 1; margin: 0 1%; text-align: center; font-size: 0.75rem;}
 .common-items.five > .common-item {flex: 20% 0 1;}
 .common-img {position: relative;}
@@ -204,7 +204,7 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 .sellers.invert {margin-top: 0rem; border-top: none; border-bottom: 1px solid #ddd;}
 .seller-items {width: 100%; max-width: 1920px; margin: 0 auto; display: flex;}
 .seller-items.invert {justify-content: flex-end;}
-.seller-items > div {flex: 44% 0 0;}
+.seller-items > div {flex: 44% 0 0; overflow: hidden;}
 .seller-items > div:first-child {padding-right: 5%;}
 .seller-items.invert > div:first-child {padding-right: 0;}
 .seller-items.invert > div:last-child {padding-left: 5%;}

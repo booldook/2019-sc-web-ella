@@ -62,12 +62,23 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
-var mainBanner = new FxSlide({slides: $(".main-ban"), cnt: 1});
+var mainBanner = new FxSlide({
+	slides: $(".main-ban"), 
+	cnt: 1, 
+	speed: 1000,
+	delay: 4000
+});
 var bestBanner = new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 
-	prev: $(".best-prev"),
-	next: $(".best-next"),
+	prev: $("#best-prev"),
+	next: $("#best-next"),
+});
+var sellerBanner = new FxSlide({
+	slides: $(".common-items"), 
+	cnt: 3, 
+	prev: $("#seller-prev"),
+	next: $("#seller-next"),
 });
 
 
