@@ -11,7 +11,7 @@ var obj = {
 	slides: $(".slides"), // 필수
 	speed: 500,	// 애니메이션 속도
 	delay: 3000,	// 딜레이
-	cnt: 5,	// 한번에 보이는 이미지 수
+	cnt: 1,	// 한번에 보이는 이미지 수
 }
 var slide1 = new FxSlide(obj);
 */
@@ -29,7 +29,12 @@ var FxSlide = (function(){
 		this.init();
 	}
 	FxSlide.prototype.init = function() {
-		console.log(this);
+		this.arr = [];
+		this.arr.push((this.now == 0) ? this.len - 1 : this.now - 1); // 왼쪽놈(prev)
+		this.arr.push(this.now); // 나(now)
+		for(var i=0; i<this.cnt; i++) this.arr.push((this.now + i + 1) % this.len);	// 오른쪽놈(next)
+		this.slides.empty();
+		for(i in this.arr) this.slides.append($(this.slide[this.arr[i]]).clone());
 	}
 	return FxSlide;
 

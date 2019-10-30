@@ -62,7 +62,7 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
-var mainBanner = new FxSlide({slides: $(".main-ban")});
+var mainBanner = new FxSlide({slides: $(".main-ban"), cnt: 2});
 
 
 

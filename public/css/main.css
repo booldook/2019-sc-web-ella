@@ -171,8 +171,8 @@ html, body {font-family: 'Lato', sans-serif; height: 10000px;}
 
 
 	/* 메인 배너 */
-	.main-bans {position: relative; overflow: hidden;}
-	.main-ban {position: relative; width: 300%; display: flex;}
+	.main-bans {position: relative; max-width: 500px; margin: auto;}
+	.main-ban {position: relative; width: 300%; display: flex; border: 2px solid blue;}
 	.main-ban > li {position: relative; flex: 100% 1 1;}
 	.main-bans > .pager-prev,
 	.main-bans > .pager-next {position: absolute; width: 80px; height: 80px; border: 2px solid #666; border-radius: 50%; color: #666; font-size: 3rem; line-height: 78px; text-align: center; top: 50%; transform: translateY(-50%); font-family: 'Poppins', sans-serif; opacity: 0; transition: opacity 1s;}
