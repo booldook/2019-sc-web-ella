@@ -40,8 +40,8 @@ var FxSlide = (function(){
 		this.autoplay = obj.autoplay == false ? false : true;
 		this.interval = null;
 		this.arr = [];
-		this.startInit(this);
-		this.init();
+		this.startInit(this);	// 객체생성시 한번만 실행
+		this.init();	// 애니메이션이 종료되면 실행
 		if(this.autoplay) this.interval = setInterval(this.ani, this.delay, this);
 	}
 	FxSlide.prototype.startInit = function(obj) {
@@ -66,12 +66,9 @@ var FxSlide = (function(){
 				obj.now = $(this).index();
 				obj.pager.removeClass("active");
 				$(this).addClass("active");
-				if(obj.dir == 0) {
-					obj.slides.children().eq(0).html($(obj.slide[obj.now]).clone().html());
-				}
-				else {
-					obj.slides.children().eq(2).html($(obj.slide[obj.now]).clone().html());
-				}
+				// 기존에 셋팅되어 있는 그림을 바꾸는 곳
+				if(obj.dir == 0) obj.slides.children().eq(0).html($(obj.slide[obj.now]).html());
+				else obj.slides.children().eq(2).html($(obj.slide[obj.now]).html());
 				obj.ani(obj, true);
 			});
 		}
