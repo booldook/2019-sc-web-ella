@@ -54,7 +54,7 @@ var FxSlide = (function(){
 			obj.ani(obj);
 		});
 		if(obj.autoplay) {
-			obj.slides.mouseover(function(){
+			obj.slides.parent().mouseover(function(){
 				clearInterval(obj.interval);
 			}).mouseleave(function(){
 				clearInterval(obj.interval);
@@ -72,7 +72,7 @@ var FxSlide = (function(){
 				else {
 					obj.slides.children().eq(2).html($(obj.slide[obj.now]).clone().html());
 				}
-				obj.ani(obj);
+				obj.ani(obj, true);
 			});
 		}
 	}
@@ -85,12 +85,16 @@ var FxSlide = (function(){
 		for(i in this.arr) this.slides.append($(this.slide[this.arr[i]]).clone());
 		this.slides.css({"width": this.width+"%", "left": -this.tar + "%"});
 	}
-	FxSlide.prototype.ani = function(obj) {
-		obj.slides.stop().animate({"left": (obj.dir * obj.tar * 2) + "%"}, obj.speed, function(){
-			if(!obj.pager) {
-				if(obj.dir == 0) (obj.now == 0) ? obj.now = obj.len - 1 : obj.now--;
-				else (obj.now == obj.len - 1) ? obj.now = 0 : obj.now++;
+	FxSlide.prototype.ani = function(obj, clickChk) {
+		if(!clickChk) {
+			if(obj.dir == 0) (obj.now == 0) ? obj.now = obj.len - 1 : obj.now--;
+			else (obj.now == obj.len - 1) ? obj.now = 0 : obj.now++;
+			if(obj.pagers) {
+				$(obj.pager).removeClass("active");
+				$(obj.pager).eq(obj.now).addClass("active");
 			}
+		}
+		obj.slides.stop().animate({"left": (obj.dir * obj.tar * 2) + "%"}, obj.speed, function(){
 			obj.dir = obj.direction;
 			obj.init();
 		});
