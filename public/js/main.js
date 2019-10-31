@@ -66,13 +66,15 @@ var mainBanner = new FxSlide({
 	slides: $(".main-ban"), 
 	cnt: 1, 
 	speed: 1000,
-	delay: 4000
+	delay: 4000,
 });
 var bestBanner = new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 
 	prev: $("#best-prev"),
 	next: $("#best-next"),
+	direction: "toRight",
+	autoplay: false
 });
 var sellerBanner = new FxSlide({
 	slides: $("#seller-slide"), 
@@ -85,6 +87,7 @@ var sellerBanner2 = new FxSlide({
 	cnt: 3, 
 	prev: $("#seller-prev2"),
 	next: $("#seller-next2"),
+	direction: "toRight"
 });
 
 

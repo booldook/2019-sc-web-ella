@@ -9,11 +9,13 @@ var FxSlide = (function(){
 // 사용자가 쓰는 법
 var obj = {
 	slides: $(".slides"), // 필수
-	speed: 500,	// 애니메이션 속도
+	speed: 500,	// 애니메이션 속도()
 	delay: 3000,	// 딜레이
+	autoplay: true,	// 자동움직임
+	direction: "toLeft",	// "toLeft", "toRight"
 	cnt: 1,	// 한번에 보이는 이미지 수
-	prev: $(".pager-prev"), //
-	next: $(".pager-next"), //
+	prev: $(".pager-prev"), 
+	next: $(".pager-next"), 
 }
 var slide1 = new FxSlide(obj);
 */
@@ -30,12 +32,14 @@ var FxSlide = (function(){
 		this.delay = obj.delay ? Number(obj.delay) : 3000;
 		this.tar = 100 / this.cnt;
 		this.width = this.tar * 2 + 100;
-		this.dir = -1;
+		this.direction = obj.direction == "toRight" ? 0 : -1;
+		this.dir = this.direction;
+		this.autoplay = obj.autoplay == false ? false : true;
 		this.interval = null;
 		this.arr = [];
 		this.startInit(this);
 		this.init();
-		this.interval = setInterval(this.ani, this.delay, this);
+		if(this.autoplay) this.interval = setInterval(this.ani, this.delay, this);
 	}
 	FxSlide.prototype.startInit = function(obj) {
 		obj.prev.click(function(e){
@@ -46,29 +50,29 @@ var FxSlide = (function(){
 			obj.dir = -1;
 			obj.ani(obj);
 		});
-		obj.slides.mouseover(function(){
-			clearInterval(obj.interval);
-		}).mouseleave(function(){
-			clearInterval(obj.interval);
-			obj.interval = setInterval(obj.ani, obj.delay, obj);
-		});
+		if(obj.autoplay) {
+			obj.slides.mouseover(function(){
+				clearInterval(obj.interval);
+			}).mouseleave(function(){
+				clearInterval(obj.interval);
+				obj.interval = setInterval(obj.ani, obj.delay, obj);
+			});
+		}
 	}
 	FxSlide.prototype.init = function() {
-		console.log(this);
 		this.arr = [];
 		this.arr.push((this.now == 0) ? this.len - 1 : this.now - 1); // 왼쪽놈(prev)
 		this.arr.push(this.now); // 나(now)
 		for(var i=0; i<this.cnt; i++) this.arr.push((this.now + i + 1) % this.len);	// 오른쪽놈(next)
 		this.slides.empty();
 		for(i in this.arr) this.slides.append($(this.slide[this.arr[i]]).clone());
-		this.slides.css({"width": this.width+"%", "left": (this.dir * this.tar) + "%"});
+		this.slides.css({"width": this.width+"%", "left": -this.tar + "%"});
 	}
 	FxSlide.prototype.ani = function(obj) {
-		console.log(obj);
 		obj.slides.stop().animate({"left": (obj.dir * obj.tar * 2) + "%"}, obj.speed, function(){
 			if(obj.dir == 0) (obj.now == 0) ? obj.now = obj.len - 1 : obj.now--;
 			else (obj.now == obj.len - 1) ? obj.now = 0 : obj.now++;
-			obj.dir = -1;
+			obj.dir = obj.direction;
 			obj.init();
 		});
 	}
