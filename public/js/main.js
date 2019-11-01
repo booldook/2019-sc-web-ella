@@ -62,14 +62,14 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
-var mainBanner = new FxSlide({
+new FxSlide({
 	slides: $(".main-ban"), 
 	cnt: 1, 
 	speed: 1000,
 	delay: 4000,
 	pager: $(".pagers")
 });
-var bestBanner = new FxSlide({
+new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 
 	prev: $("#best-prev"),
@@ -77,17 +77,24 @@ var bestBanner = new FxSlide({
 	direction: "toRight",
 	autoplay: false
 });
-var sellerBanner = new FxSlide({
+new FxSlide({
 	slides: $("#seller-slide"), 
 	cnt: 3, 
 	prev: $("#seller-prev"),
 	next: $("#seller-next"),
 });
-var sellerBanner2 = new FxSlide({
+new FxSlide({
 	slides: $("#seller-slide2"), 
 	cnt: 3, 
 	prev: $("#seller-prev2"),
 	next: $("#seller-next2"),
+	direction: "toRight"
+});
+new FxSlide({
+	slides: $("#choice-wrap"), 
+	cnt: 5, 
+	prev: $("#choice-prev"),
+	next: $("#choice-next"),
 	direction: "toRight"
 });
 
