@@ -115,6 +115,12 @@ new FxSlide({
 	next: $("#brand-next"),
 	direction: "toRight"
 });
+new FxSlide({
+	slides: $(".insta-items"), 
+	cnt: 5, 
+	prev: $("#insta-prev"),
+	next: $("#insta-next"),
+});
 
 $(".choice-navi").click(function(){
 	var num = $(this).index();
