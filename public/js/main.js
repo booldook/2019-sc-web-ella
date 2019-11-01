@@ -94,8 +94,19 @@ new FxSlide({
 	slides: $("#choice-wrap"), 
 	cnt: 5, 
 	prev: $("#choice-prev"),
-	next: $("#choice-next"),
-	direction: "toRight"
+	next: $("#choice-next")
+});
+new FxSlide({
+	slides: $("#choice-wrap1"), 
+	cnt: 5, 
+	prev: $("#choice-prev1"),
+	next: $("#choice-next1")
+});
+new FxSlide({
+	slides: $("#choice-wrap2"), 
+	cnt: 5, 
+	prev: $("#choice-prev2"),
+	next: $("#choice-next2")
 });
 
 
