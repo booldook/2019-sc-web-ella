@@ -7,53 +7,14 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>SLICK Test</title>
 	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../slick-1.8.1/slick/slick.css">
+	<link rel="stylesheet" href="../slick-1.8.1/slick/slick-theme.css">
 	<link rel="stylesheet" href="../css/animate.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/base.css">
-	<link rel="stylesheet" href="../slick-1.8.1/slick/slick.css">
-	<link rel="stylesheet" href="../slick-1.8.1/slick/slick-theme.css">
 	<style type="text/css">
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-		}
-
-		* {
-			box-sizing: border-box;
-		}
-
-		.slider {
-			width: 50%;
-			margin: 100px auto;
-		}
-
-		.slick-slide {
-			margin: 0px 20px;
-		}
-
-		.slick-slide img {
-			width: 100%;
-		}
-
-		.slick-prev:before,
-		.slick-next:before {
-			color: black;
-		}
-
-
-		.slick-slide {
-			transition: all ease-in-out .3s;
-			opacity: .2;
-		}
-
-		.slick-active {
-			opacity: .5;
-		}
-
-		.slick-current {
-			opacity: 1;
-		}
+		.bans {width: 60%; margin: 100px auto;}
+		.ban {border: 2px solid red;}
 	</style>
 	<script src="../js/jquery-3.4.1.min.js"></script>
 	<script src="../js/jquery.cookie.js"></script>
@@ -65,33 +26,61 @@
 </head>
 
 <body>
-	<section class="regular slider">
-		<div>
-			<img src="http://placehold.it/350x300?text=1">
+	<section class="bans">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=1" class="img">
 		</div>
-		<div>
-			<img src="http://placehold.it/350x300?text=2">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=2" class="img">
 		</div>
-		<div>
-			<img src="http://placehold.it/350x300?text=3">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=3" class="img">
 		</div>
-		<div>
-			<img src="http://placehold.it/350x300?text=4">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=4" class="img">
 		</div>
-		<div>
-			<img src="http://placehold.it/350x300?text=5">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=5" class="img">
 		</div>
-		<div>
-			<img src="http://placehold.it/350x300?text=6">
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=6" class="img">
+		</div>
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=7" class="img">
+		</div>
+		<div class="ban">
+			<img src="https://via.placeholder.com/800x400/f30/fff?text=8" class="img">
 		</div>
 	</section>
 	<script src="../slick-1.8.1/slick/slick.min.js"></script>
 	<script>
-		$(".regular").slick({
+		$(".bans").slick({
+			autoplay: true,
+  		autoplaySpeed: 2000,
 			dots: true,
 			infinite: true,
-			slidesToShow: 3,
-			slidesToScroll: 3
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			centerMode: true,
+			variableWidth: true,
+			responsive: [
+			{
+				breakpoint: 1024,
+				settings: {slidesToShow: 3}
+			},
+			{
+				breakpoint: 600,
+				settings: {slidesToShow: 2}
+			},
+			{
+				breakpoint: 480,
+				settings: {slidesToShow: 1}
+			},
+			{
+				breakpoint: 320,
+				settings: "unslick"
+			},
+	]
 		});
 	</script>
 </body>
