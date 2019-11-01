@@ -108,6 +108,24 @@ new FxSlide({
 	prev: $("#choice-prev2"),
 	next: $("#choice-next2")
 });
+new FxSlide({
+	slides: $(".brand-items"), 
+	cnt: 5, 
+	prev: $("#brand-prev"),
+	next: $("#brand-next"),
+	direction: "toRight"
+});
+
+$(".choice-navi").click(function(){
+	var num = $(this).index();
+	$(".choice-navi").removeClass("active");
+	$(this).addClass("active");
+	$(".choice-wrap").hide();
+	$(".choice-wrap").eq(num).show();
+});
+
+
+
 
 
 

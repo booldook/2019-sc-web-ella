@@ -41,6 +41,8 @@ var FxSlide = (function(){
 		this.autoplay = obj.autoplay == false ? false : true;
 		this.interval = null;
 		this.arr = [];
+		if(this.slides.css("position") == "static") this.slides.css({"position": "relative"});
+		this.slides.parent().css({"overflow": "hidden"});
 		this.startInit(this);	// 객체생성시 한번만 실행
 		this.init();	// 애니메이션이 종료되면 실행
 		if(this.autoplay) this.interval = setInterval(this.ani, this.delay, this);
