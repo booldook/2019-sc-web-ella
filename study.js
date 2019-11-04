@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 app.listen(3001, () => {
 	console.log("http://127.0.0.1:3001");
 });
@@ -12,3 +13,4 @@ var str2 = tel.join("-");
 console.log(str2);
 
 // [express]의 [path]에 대해 알아보자
+console.log(path.join(__dirname, "public"));
