@@ -28,9 +28,11 @@ app.use(morgan('combined', { stream: accessLogStream }));
 const frontRouter = require("./router/front");
 const adminRouter = require("./router/admin");
 const apiRouter = require("./router/api");
+const sqlRouter = require("./router/rest-sql");
 app.use("/", frontRouter);
 app.use("/admin", adminRouter);
 app.use("/api", apiRouter);
+app.use("/rest-sql", sqlRouter);
 
 
 

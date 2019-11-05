@@ -1,0 +1,39 @@
+extends ../layout/rest/test.pug
+block title
+	title REST-SQL 테스트
+block css
+	link(href="/css/rest.css" rel="stylesheet")
+block js
+	script(src="/js/rest.js")
+block content
+	.container
+		.jumbotron
+			h1 RESR-SQL 테스트
+		.div.create.my-3
+			h3.mb-2 - 저장(Create)
+			form(name="saveForm" method="post" action="/sql")
+				ul.d-flex
+					li.mr-2
+						input.form-control(name="username")
+					li
+						button.btn.btn-primary 저장
+		.div.update.my-3
+			h3.mb-2 - 수정(Create)
+			form(name="saveForm" method="post" action="/sql")
+				input(type="hidden" name="_method" value="put")
+				input(type="hidden" name="id" value="")
+				ul.d-flex
+					li.mr-2
+						input.form-control(name="username")
+					li
+						button.btn.btn-success 수정
+		.div.read.my-3
+			h3.mb-2 - 리스트(Read)
+			ul.d-flex.flex-wrap
+				- for(var i=0; i<20; i++) {
+					li.m-1.p-3.d-flex.border.rounded
+						span.mr-2 1
+						span.mr-2 홍길동
+						button.btn.btn-danger.btn-sm.mr-2 삭제
+						button.btn.btn-success.btn-sm.mr-2 수정
+				- }
