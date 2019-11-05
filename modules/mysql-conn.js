@@ -6,7 +6,7 @@ const pool = mysql.createPool({
 	password: "000000",
 	database: "ella",
 	connectionLimit: 10,
-	waitForConnections: true
+	waitForConnections: false
 });
 
 /* async await 하기 전 */
