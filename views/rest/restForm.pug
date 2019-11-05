@@ -11,7 +11,7 @@ block content
 			h1 RESR-SQL 테스트
 		.div.create.my-3
 			h3.mb-2 - 저장(Create)
-			form(name="saveForm" method="post" action="/sql")
+			form(name="saveForm" method="post" action="/rest-sql/sql")
 				ul.d-flex
 					li.mr-2
 						input.form-control(name="username")
@@ -19,7 +19,7 @@ block content
 						button.btn.btn-primary 저장
 		.div.update.my-3
 			h3.mb-2 - 수정(Create)
-			form(name="saveForm" method="post" action="/sql")
+			form(name="saveForm" method="post" action="/rest-sql/sql")
 				input(type="hidden" name="_method" value="put")
 				input(type="hidden" name="id" value="")
 				ul.d-flex

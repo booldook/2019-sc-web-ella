@@ -9,6 +9,7 @@ app.listen(3000, () => {
 const path = require("path");
 const fs = require("fs");
 const morgan = require("morgan");
+const bodyParser = require("body-parser");
 
 /* modules */
 
@@ -16,6 +17,7 @@ const morgan = require("morgan");
 /* Express 설정 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
+app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
