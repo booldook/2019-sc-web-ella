@@ -7,6 +7,8 @@ app.listen(3000, () => {
 
 /* node_modules */
 const path = require("path");
+const fs = require("fs");
+const morgan = require("morgan");
 
 /* modules */
 
@@ -17,12 +19,18 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
+/* morgan 설정 */
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), { flags: 'a' });
+app.use(morgan('combined', { stream: accessLogStream }));
+
 
 /* router */
 const frontRouter = require("./router/front");
 const adminRouter = require("./router/admin");
+const apiRouter = require("./router/api");
 app.use("/", frontRouter);
 app.use("/admin", adminRouter);
+app.use("/api", apiRouter);
 
 
 
