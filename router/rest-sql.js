@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const sql = require("./modules/mysql-conn");
+const {mysql, sqlExec} = require("../modules/mysql-conn");
 
 /* GET */
 router.get("/", getForm);
@@ -26,7 +26,8 @@ function postData(req, res) {
 		let username = req.body.username;
 		let sql = "INSERT INTO rest SET username=?";
 		let sqlVals = [username];
-		let result = await 
+		let result = await sqlExec(sql, sqlVals);
+		res.json(result);
 	})();
 }
 
