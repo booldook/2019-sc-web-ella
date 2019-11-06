@@ -32,7 +32,7 @@ function postData(req, res) {
 		let sql = "INSERT INTO rest SET username=?";
 		let sqlVals = [username];
 		let result = await sqlExec(sql, sqlVals);
-		res.json(result);
+		res.redirect("/rest-sql");
 	})();
 }
 
