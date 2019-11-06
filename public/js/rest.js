@@ -6,3 +6,10 @@ function saveFn(f) {
 	}
 	return true;
 }
+
+$(".bt-up").click(function(){
+	var id = $(this).parent().find(".sp-id").text();
+	var username = $(this).parent().find(".sp-username").text();
+	$("form[name='updateForm']").find("input[name='id']").val(id);
+	$("form[name='updateForm']").find("input[name='username']").val(username).focus();
+});

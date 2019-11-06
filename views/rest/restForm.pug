@@ -32,8 +32,8 @@ block content
 			ul.d-flex.flex-wrap
 				each user in users
 					li.m-1.p-3.d-flex.border.rounded
-						span.mr-2= user.id
-						span.mr-2= user.username
-						button.btn.btn-danger.btn-sm.mr-2(data-id=`${user.id}`) 삭제
-						button.btn.btn-success.btn-sm.mr-2(data-id=`${user.id}`) 수정
+						span.sp-id.mr-2= user.id
+						span.sp-username.mr-2= user.username
+						button.bt-del.btn.btn-danger.btn-sm.mr-2 삭제
+						button.bt-up.btn.btn-success.btn-sm.mr-2 수정
 			
