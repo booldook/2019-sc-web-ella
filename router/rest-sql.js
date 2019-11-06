@@ -3,27 +3,21 @@ const router = express.Router();
 
 const {mysql, sqlExec} = require("../modules/mysql-conn");
 
-/* GET */
-router.get("/", getForm);
 
 /* REST */
-router.get("/sql", getData);
+router.get("/", getData);
 router.post("/sql", postData);
 router.put("/sql", putData);
 router.delete("/sql", deleteData);
 
 /* Router CB */
-function getForm(req, res) {
+function getData(req, res) {
 	(async () => {
 		let sql = "SELECT * FROM rest ORDER BY id DESC";
 		let result = await sqlExec(sql);
 		//res.json(result[0]);
 		res.render("rest/restForm", {users: result[0]});
 	})();
-}
-
-function getData(req, res) {
-	res.send("getData");
 }
 
 function postData(req, res) {
