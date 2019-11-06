@@ -21,6 +21,11 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+
+/* method-override 설정 */
+app.use(methodOverride('X-HTTP-Method'));
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride(function (req, res) {
 	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
 		var method = req.body._method

@@ -46,7 +46,12 @@ function putData(req, res) {
 }
 
 function deleteData(req, res) {
-	res.send("deleteData");
+	(async () => {
+		let sql = "DELETE FROM rest WHERE id=?";
+		let sqlVals = req.body.id;
+		let result = await sqlExec(sql, sqlVals);
+		(result[0].affectedRows > 0) ? res.json({code: 200}) : res.json({code: 500});
+	})();
 }
 
 
