@@ -10,6 +10,7 @@ const path = require("path");
 const fs = require("fs");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
+const methodOverride = require('method-override');
 
 /* modules */
 
@@ -20,6 +21,13 @@ app.use("/", express.static(path.join(__dirname, "public")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+app.use(methodOverride(function (req, res) {
+	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+		var method = req.body._method
+		delete req.body._method
+		return method
+	}
+}));
 
 /* morgan 설정 */
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), { flags: 'a' });

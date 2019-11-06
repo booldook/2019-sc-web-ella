@@ -19,14 +19,14 @@ block content
 						button.btn.btn-primary 저장
 		.div.update.my-3.border-bottom.pb-2
 			h3.mb-2.mt-3 - 수정(Update)
-			form(name="updateForm" method="post" action="/rest-sql/sql")
+			form(name="updateForm" method="post" action="/rest-sql/sql" onsubmit="return updateFn(this);")
 				input(type="hidden" name="_method" value="put")
 				input(type="hidden" name="id" value="")
 				ul.d-flex
 					li.mr-2
-						input.form-control(name="username")
+						input.form-control(name="username" disabled)
 					li
-						button.btn.btn-success 수정
+						button.btn.btn-success(disabled) 수정
 		.div.read.my-3
 			h3.mb-2 - 리스트(Read)
 			ul.d-flex.flex-wrap

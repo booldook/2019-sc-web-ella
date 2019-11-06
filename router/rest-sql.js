@@ -37,7 +37,12 @@ function postData(req, res) {
 }
 
 function putData(req, res) {
-	res.send("putData");
+	(async () => {
+		let sql = "UPDATE rest SET username=? WHERE id=?";
+		let sqlVals = [req.body.username, req.body.id];
+		let result = await sqlExec(sql, sqlVals);
+		res.redirect("/rest-sql");
+	})();
 }
 
 function deleteData(req, res) {
