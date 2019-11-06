@@ -14,7 +14,12 @@ router.delete("/sql", deleteData);
 
 /* Router CB */
 function getForm(req, res) {
-	res.render("rest/restForm");
+	(async () => {
+		let sql = "SELECT * FROM rest ORDER BY id DESC";
+		let result = await sqlExec(sql);
+		//res.json(result[0]);
+		res.render("rest/restForm", {users: result[0]});
+	})();
 }
 
 function getData(req, res) {
