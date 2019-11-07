@@ -1,6 +1,23 @@
-getData();
+/* Event */
+$(document).ready(getData);
+$("#bt-wr").click(postData);
+
+
+/* CRUD */
 function getData() {
 	ajax("/rest-ajax", "get", {}, renderData);
+}
+function postData() {
+	var username = $("#username-wr").val().trim();
+	if(username == "") {
+		alert("이름을 입력하세요.");
+		$("#username-wr").focus();
+		return false;
+	}
+	ajax("/rest-ajax", "post", {username: username}, function(res){
+		if(res.code == 200) getData();
+		else alert("통신에 실패하였습니다.");
+	});
 }
 
 function renderData(res) {

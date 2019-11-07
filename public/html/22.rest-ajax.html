@@ -25,16 +25,14 @@
 			</div>
 			<div class="div create my-3 border-bottom pb-2">
 				<h3 class="mb-2 mt-3">- 저장(Create)</h3>
-				<form name="saveForm" method="post" action="/rest-sql/sql" onsubmit="return saveFn(this);">
-					<ul class="d-flex">
-						<li class="mr-2">
-							<input class="form-control" name="username">
-						</li>
-						<li>
-							<button class="btn btn-primary">저장</button>
-						</li>
-					</ul>
-				</form>
+				<ul class="d-flex">
+					<li class="mr-2">
+						<input class="form-control" name="username" id="username-wr">
+					</li>
+					<li>
+						<button class="btn btn-primary" id="bt-wr">저장</button>
+					</li>
+				</ul>
 			</div>
 			<div class="div update my-3 border-bottom pb-2">
 				<h3 class="mb-2 mt-3">- 수정(Update)</h3>
