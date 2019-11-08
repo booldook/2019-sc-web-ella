@@ -50,8 +50,10 @@ app.use("/api", apiRouter);
 /* router - rest */
 const sqlRouter = require("./router/rest-sql");
 const ajaxRouter = require("./router/rest-ajax");
+const seqRouter = require("./router/rest-seq");
 app.use("/rest-sql", sqlRouter);
 app.use("/rest-ajax", ajaxRouter);
+app.use("/rest-seq", seqRouter);
 
 
 
