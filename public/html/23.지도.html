@@ -17,17 +17,19 @@
 		<script src="../js/imagesloaded.pkgd.min.js"></script>
 		<script src="../js/masonry.pkgd.min.js"></script>
 		<script src="../js/wow.min.js"></script>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=be6c2d16524bb1811b50d8b4d731e8cb&libraries=LIBRARY"></script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Kakao지도 연동하기</h1>
 			</div>
-			<div class="map" id="map" style="width: 100%; height:400px;">
-
+			<div class="map-wrap position-relative">
+				<div class="map" id="map" style="width: 100%; height:400px;"></div>
+				<button class="bt-roadview btn btn-primary position-absolute mr-3 mb-3" style="bottom: 0; right: 0; z-index:9999;">로드뷰보기</button>
 			</div>
 		</div>
 		<script src="../js/util.js"></script>
-		<script src="/js/kakao-map.js"></script>
+		<script src="../js/kakao-map.js"></script>
 	</body>
 </html>
