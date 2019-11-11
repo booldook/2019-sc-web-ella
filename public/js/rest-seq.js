@@ -1,63 +1,39 @@
-/* Event */
-$(document).ready(getData);
-$("#bt-wr").click(postData);
-$("#bt-up").click(putData);
-
-/* CRUD */
-function getData() {
-	ajax("/rest-ajax", "get", {}, renderData);
-}
-function postData() {
-	var username = $("#username-wr").val().trim();
-	if(username == "") {
+function saveFn(f) {
+	if(f.username.value.trim() == "") {
 		alert("이름을 입력하세요.");
-		$("#username-wr").focus();
+		f.username.focus();
 		return false;
 	}
-	ajax("/rest-ajax", "post", {username: username}, function(res){
-		if(res.code == 200) getData();
-		else alert("통신에 실패하였습니다.");
-		$("#username-wr").val('');
-	});
-}
-function putData() {
-	var id = $("#id-up").val();
-	var username = $("#username-up").val();
-	ajax("/rest-ajax", "put", {id: id, username: username}, function(res){
-		if(res.code == 200) getData();
-		else alert("통신에 실패하였습니다.");
-		$("#id-up").val('');
-		$("#username-up").val('').prop("disabled", true);
-		$("#bt-up").prop("disabled", true);
-	});
-}
-function delData(btn) {
-	if(confirm("정말로 삭제하시겠습니까?")){
-		var id = $(btn).parent().find(".sp-id").text();
-		ajax("/rest-ajax", "delete", {id: id}, function(res) {
-			if(res.code == 200) getData();
-			else alert("삭제에 실패하였습니다.");
-		});
-	}
+	return true;
 }
 
-/* DOM */
-function chgData(btn) {
-	var id = $(btn).parent().find(".sp-id").text();
-	var username = $(btn).parent().find(".sp-username").text();
-	$("#id-up").val(id);
-	$("#username-up").prop("disabled", false).val(username);
-	$("#bt-up").prop("disabled", false);
-}
-function renderData(res) {
-	var html = '';
-	for(var i in res) {
-		html += '<li class="m-1 p-3 d-flex border rounded">';
-		html += '<span class="sp-id mr-2">'+res[i].id+'</span>';
-		html += '<span class="sp-username mr-2">'+res[i].username+'</span>';
-		html += '<button class="btn btn-danger btn-sm mr-2" onclick="delData(this);">삭제</button>';
-		html += '<button class="btn btn-success btn-sm mr-2" onclick="chgData(this);">수정</button>';
-		html += '</li>';
+function updateFn(f) {
+	if(f.id.value.trim() == "") {
+		alert("수정을 하려면 아래의 리스트에서 수정할 데이터의 수정버튼을 눌러주세요.");
+		return false;
 	}
-	$(".lists").html(html);
+	if(f.username.value.trim() == "") {
+		alert("이름을 입력하세요.");
+		f.username.focus();
+		return false;
+	}
+	return true;
 }
+
+$(".bt-up").click(function(){
+	$("form[name='updateForm']").find("input[name='username']").prop("disabled", false);
+	$("form[name='updateForm']").find("button").prop("disabled", false);
+	var id = $(this).parent().find(".sp-id").text();
+	var username = $(this).parent().find(".sp-username").text();
+	$("form[name='updateForm']").find("input[name='id']").val(id);
+	$("form[name='updateForm']").find("input[name='username']").val(username).focus();
+});
+
+$(".bt-del").click(function(){
+	var id = $(this).parent().find(".sp-id").text();
+	if(confirm("정말로 삭제하시겠습니까?")) {
+		ajax("/rest-sql/sql", "delete", {id: id}, function(res){
+			(res.code == 200) ? location.href = "/rest-sql" : alert("삭제에 실패했습니다.");
+		});
+	}
+});

@@ -1,0 +1,37 @@
+extends ../layout/rest/test.pug
+block title
+	title REST-SEQ 테스트
+block js
+	script(src="/js/rest-seq.js")
+block content
+	.container
+		.jumbotron
+			h1 REST-SEQ 테스트
+		.div.create.my-3.border-bottom.pb-2
+			h3.mb-2.mt-3 - 저장(Create)
+			form(name="saveForm" method="post" action="/rest-seq" onsubmit="return saveFn(this);")
+				div.mr-2.form-inline
+					input.form-control.mr-2(name="stdname" placeholder="이름")
+					input.form-control.mr-2(name="kor" type="number" min="0" max="100" placeholder="국어")
+					input.form-control.mr-2(name="eng" type="number" min="0" max="100" placeholder="영어")
+					input.form-control.mr-2(name="math" type="number" min="0" max="100" placeholder="수학")
+					button.btn.btn-primary.mr-2 저장
+		.div.update.my-3.border-bottom.pb-2
+			h3.mb-2.mt-3 - 수정(Update)
+			form(name="updateForm" method="post" action="/rest-seq" onsubmit="return updateFn(this);")
+				div.mr-2.form-inline
+					input.form-control.mr-2(name="stdname" placeholder="이름")
+					input.form-control.mr-2(name="kor" type="number" min="0" max="100" placeholder="국어")
+					input.form-control.mr-2(name="eng" type="number" min="0" max="100" placeholder="영어")
+					input.form-control.mr-2(name="math" type="number" min="0" max="100" placeholder="수학")
+					button.btn.btn-success.mr-2 수정
+		.div.read.my-3
+			h3.mb-2 - 리스트(Read)
+			ul.d-flex.flex-wrap
+				//- each user in users
+				//- 	li.m-1.p-3.d-flex.border.rounded
+				//- 		span.sp-id.mr-2= user.id
+				//- 		span.sp-username.mr-2= user.username
+				//- 		button.bt-del.btn.btn-danger.btn-sm.mr-2 삭제
+				//- 		button.bt-up.btn.btn-success.btn-sm.mr-2 수정
+			
