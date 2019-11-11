@@ -1,7 +1,22 @@
 function saveFn(f) {
-	if(f.username.value.trim() == "") {
+	if(f.stdname.value.trim() == "") {
 		alert("이름을 입력하세요.");
-		f.username.focus();
+		f.stdname.focus();
+		return false;
+	}
+	if(f.kor.value < 0 || f.kor.value > 100 || f.kor.value == "") {
+		alert("국어점수를 올바로 입력하세요.");
+		f.kor.focus();
+		return false;
+	}
+	if(f.eng.value < 0 || f.eng.value > 100 || f.eng.value == "") {
+		alert("영어점수를 올바로 입력하세요.");
+		f.eng.focus();
+		return false;
+	}
+	if(f.math.value < 0 || f.math.value > 100 || f.math.value == "") {
+		alert("수학점수를 올바로 입력하세요.");
+		f.math.focus();
 		return false;
 	}
 	return true;
