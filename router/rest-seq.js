@@ -55,7 +55,17 @@ async function postData(req, res) {
 }
 
 async function putData(req, res) {
-	
+	let result = await Score.update({
+		stdname: req.body.stdname,
+		kor: req.body.kor,
+		eng: req.body.eng,
+		math: req.body.math,
+	}, {
+		where: {
+			id: req.body.id
+		}
+	});
+	res.redirect("/rest-seq");
 }
 
 async function deleteData(req, res) {

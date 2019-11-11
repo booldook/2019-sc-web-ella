@@ -1,4 +1,4 @@
-function saveFn(f) {
+function validateInput(f) {
 	if(f.stdname.value.trim() == "") {
 		alert("이름을 입력하세요.");
 		f.stdname.focus();
@@ -22,17 +22,16 @@ function saveFn(f) {
 	return true;
 }
 
+function saveFn(f) {
+	return validateInput(f);
+}
+
 function updateFn(f) {
 	if(f.id.value.trim() == "") {
 		alert("수정을 하려면 아래의 리스트에서 수정할 데이터의 수정버튼을 눌러주세요.");
 		return false;
 	}
-	if(f.username.value.trim() == "") {
-		alert("이름을 입력하세요.");
-		f.username.focus();
-		return false;
-	}
-	return true;
+	return validateInput(f);
 }
 
 $(".bt-up").click(function(){
