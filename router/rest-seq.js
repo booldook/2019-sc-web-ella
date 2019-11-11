@@ -38,7 +38,8 @@ router.delete("/", deleteData);
 
 /* Router CB */
 async function getData(req, res) {
-	res.render("rest/seqForm.pug");
+	let result = await Score.findAll();
+	res.render("rest/seqForm.pug", {datas: result});
 }
 
 async function postData(req, res) {
@@ -48,7 +49,7 @@ async function postData(req, res) {
 		eng: req.body.eng,
 		math: req.body.math,
 	});
-	res.json(result);
+	res.redirect("/rest-seq");
 }
 
 async function putData(req, res) {
