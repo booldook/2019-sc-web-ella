@@ -20,6 +20,8 @@ block content
 			h3.mb-2.mt-3 - 수정(Update)
 			form(name="updateForm" method="post" action="/rest-seq" onsubmit="return updateFn(this);")
 				div.mr-2.form-inline
+					input(type="hidden" name="_method" value="put")
+					input(type="hidden" name="id")
 					input.form-control.mr-2(name="stdname" placeholder="이름" disabled)
 					input.form-control.mr-2(name="kor" type="number" min="0" max="100" placeholder="국어" disabled)
 					input.form-control.mr-2(name="eng" type="number" min="0" max="100" placeholder="영어" disabled)
