@@ -42,7 +42,13 @@ async function getData(req, res) {
 }
 
 async function postData(req, res) {
-	
+	let result = await Score.create({
+		stdname: req.body.stdname,
+		kor: req.body.kor,
+		eng: req.body.eng,
+		math: req.body.math,
+	});
+	res.json(result);
 }
 
 async function putData(req, res) {
