@@ -18,7 +18,7 @@ const methodOverride = require('method-override');
 /* Express 설정 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
