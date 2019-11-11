@@ -38,7 +38,9 @@ router.delete("/", deleteData);
 
 /* Router CB */
 async function getData(req, res) {
-	let result = await Score.findAll();
+	let result = await Score.findAll({
+		order: [["id", "DESC"]]
+	});
 	res.render("rest/seqForm.pug", {datas: result});
 }
 
@@ -57,7 +59,12 @@ async function putData(req, res) {
 }
 
 async function deleteData(req, res) {
-	
+	let result = await Score.destroy({
+		where: {
+			id: req.body.id
+		}
+	});
+	res.json(result);
 }
 
 

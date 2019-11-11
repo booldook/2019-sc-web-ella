@@ -20,11 +20,11 @@ block content
 			h3.mb-2.mt-3 - 수정(Update)
 			form(name="updateForm" method="post" action="/rest-seq" onsubmit="return updateFn(this);")
 				div.mr-2.form-inline
-					input.form-control.mr-2(name="stdname" placeholder="이름")
-					input.form-control.mr-2(name="kor" type="number" min="0" max="100" placeholder="국어")
-					input.form-control.mr-2(name="eng" type="number" min="0" max="100" placeholder="영어")
-					input.form-control.mr-2(name="math" type="number" min="0" max="100" placeholder="수학")
-					button.btn.btn-success.mr-2 수정
+					input.form-control.mr-2(name="stdname" placeholder="이름" disabled)
+					input.form-control.mr-2(name="kor" type="number" min="0" max="100" placeholder="국어" disabled)
+					input.form-control.mr-2(name="eng" type="number" min="0" max="100" placeholder="영어" disabled)
+					input.form-control.mr-2(name="math" type="number" min="0" max="100" placeholder="수학" disabled)
+					button.btn.btn-success.mr-2(disabled) 수정
 		.div.read.my-3
 			h3.mb-2 - 리스트(Read)
 			ul.d-flex.flex-wrap.justify-content-between
@@ -32,9 +32,9 @@ block content
 					li.m-1.p-3.d-flex.border.rounded(style="flex:49% 0 0;")
 						span.sp-id.mr-2= data.id
 						span.sp-stdname.mr-2= data.stdname
-						span.sp-stdname.mr-2= `국어: ${data.kor}`
-						span.sp-stdname.mr-2= `영어: ${data.eng}`
-						span.sp-stdname.mr-5= `수학: ${data.math}`
+						span.sp-kor.mr-2= `국어: ${data.kor}`
+						span.sp-eng.mr-2= `영어: ${data.eng}`
+						span.sp-math.mr-5= `수학: ${data.math}`
 						button.bt-del.btn.btn-danger.btn-sm.mr-2 삭제
 						button.bt-up.btn.btn-success.btn-sm.mr-2 수정
 			

@@ -36,19 +36,28 @@ function updateFn(f) {
 }
 
 $(".bt-up").click(function(){
-	$("form[name='updateForm']").find("input[name='username']").prop("disabled", false);
+	$("form[name='updateForm']").find("input[name='stdname']").prop("disabled", false);
+	$("form[name='updateForm']").find("input[name='kor']").prop("disabled", false);
+	$("form[name='updateForm']").find("input[name='eng']").prop("disabled", false);
+	$("form[name='updateForm']").find("input[name='math']").prop("disabled", false);
 	$("form[name='updateForm']").find("button").prop("disabled", false);
 	var id = $(this).parent().find(".sp-id").text();
-	var username = $(this).parent().find(".sp-username").text();
+	var stdname = $(this).parent().find(".sp-stdname").text();
+	var kor = $(this).parent().find(".sp-kor").text().replace("국어: ", "");
+	var eng = $(this).parent().find(".sp-eng").text().replace("영어: ", "");
+	var math = $(this).parent().find(".sp-math").text().replace("수학: ", "");
 	$("form[name='updateForm']").find("input[name='id']").val(id);
-	$("form[name='updateForm']").find("input[name='username']").val(username).focus();
+	$("form[name='updateForm']").find("input[name='stdname']").val(stdname).focus();
+	$("form[name='updateForm']").find("input[name='kor']").val(kor);
+	$("form[name='updateForm']").find("input[name='eng']").val(eng);
+	$("form[name='updateForm']").find("input[name='math']").val(math);
 });
 
 $(".bt-del").click(function(){
 	var id = $(this).parent().find(".sp-id").text();
 	if(confirm("정말로 삭제하시겠습니까?")) {
-		ajax("/rest-sql/sql", "delete", {id: id}, function(res){
-			(res.code == 200) ? location.href = "/rest-sql" : alert("삭제에 실패했습니다.");
+		ajax("/rest-seq", "delete", {id: id}, function(res){
+			(res > 0) ? location.href = "/rest-seq" : alert("삭제에 실패했습니다.");
 		});
 	}
 });
