@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "ella",
+    "password": "000000",
+    "database": "ella",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": true
+  },
+  "test": {
+    "username": "ella",
+    "password": "000000",
+    "database": "ella",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": true
+  },
+  "production": {
+    "username": "ella",
+    "password": "000000",
+    "database": "ella",
+    "host": "localhost",
+    "dialect": "mysql",
+    "operatorsAliases": true
+  }
+}

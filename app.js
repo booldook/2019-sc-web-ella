@@ -41,19 +41,23 @@ app.use(morgan('combined', { stream: accessLogStream }));
 
 /* router - ella */
 const frontRouter = require("./router/front");
-const adminRouter = require("./router/admin");
+const adminLoginRouter = require("./router/admin-login");
 const apiRouter = require("./router/api");
 app.use("/", frontRouter);
-app.use("/admin", adminRouter);
+app.use("/admin/login", adminLoginRouter);
 app.use("/api", apiRouter);
 
 /* router - rest */
+/*
 const sqlRouter = require("./router/rest-sql");
 const ajaxRouter = require("./router/rest-ajax");
 const seqRouter = require("./router/rest-seq");
 app.use("/rest-sql", sqlRouter);
 app.use("/rest-ajax", ajaxRouter);
 app.use("/rest-seq", seqRouter);
+*/
+
+
 
 
 
