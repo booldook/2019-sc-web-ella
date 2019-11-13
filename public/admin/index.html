@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" style="height: 100%;">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>ELLA 관리자</title>
+	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<link rel="stylesheet" href="../css/admin.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/imagesloaded.pkgd.min.js"></script>
+	<script src="../js/masonry.pkgd.min.js"></script>
+	<script src="../js/wow.min.js"></script>
 </head>
-<body>
-	관리자모드
+<body class="d-flex justify-content-center align-items-center" style="height: 100%;">
+	<form action="/admin/login" method="post">
+		<div class="border rounded" style="width: 300px;">
+			<div class="p-3 bg-primary text-light f-15">
+				<i class="fas fa-lock-open"></i> 관리자 로그인
+			</div>
+			<ul>
+				<li class="p-2">
+					<span class="d-inline-block" style="width: 150px;">아이디 : </span>
+					<input type="text" class="form-control" name="adminID">
+				</li>
+				<li class="p-2">
+					<span class="d-inline-block" style="width: 150px;">패스워드 : </span>
+					<input type="password" class="form-control" name="adminPW">
+				</li>
+				<li class="p-2 text-center">
+					<button class="btn btn-primary">확인</button>
+				</li>
+			</ul>
+		</div>
+	</form>
 </body>
 </html>
