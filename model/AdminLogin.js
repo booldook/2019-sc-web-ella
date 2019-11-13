@@ -13,7 +13,6 @@ AdminLogin.init({
 	// timestamps: false
 });
 // force: true -> 기존에 테이블이 존재하면 삭제하고 다시만든다. 절대 쓰지말자
-/*
 (async () => {
 	const result = await AdminLogin.sync({force: true});
 	AdminLogin.create({
@@ -21,8 +20,8 @@ AdminLogin.init({
 		adminPW: "1234",
 		grade: 9
 	});
-})();
-*/
+});
+
 
 
 module.exports = {AdminLogin}
