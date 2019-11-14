@@ -8,7 +8,7 @@ const util = require(path.join(__dirname, "../modules/util"));
 router.post("/", postData);
 
 /* Router CB */
-async function postData(req, res) {
+async function postData(req, res, next) {
 	let adminID = req.body.adminID;
 	let adminPW = req.body.adminPW;
 	let result = await AdminLogin.findAll({

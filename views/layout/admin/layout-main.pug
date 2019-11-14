@@ -1,5 +1,5 @@
 doctype html
-html(lang="ko")
+html.h-100(lang="ko")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
@@ -7,12 +7,12 @@ html(lang="ko")
 		include ../../inc/css.pug
 		link(href="/css/admin.css" rel="stylesheet")
 		include ../../inc/js.pug
-	body
-		.wrap
+	body.h-100
+		.wrap.h-100
 			include ../../inc/admin-nav.pug
-			.d-flex.justify-content-between
+			.d-flex.justify-content-between(style="height: calc(100% - 6rem);")
 				include ../../inc/admin-left.pug
-				.conts
+				.conts(style="overflow-y: scroll;")
 					block conts
 			include ../../inc/admin-footer.pug
 			block js
