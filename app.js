@@ -13,7 +13,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require('method-override');
 
 /* modules */
-
+const util = require(path.join(__dirname, "modules/util"));
 
 /* Express 설정 */
 app.locals.pretty = true;
