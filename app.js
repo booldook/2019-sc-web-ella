@@ -42,9 +42,11 @@ app.use(morgan('combined', { stream: accessLogStream }));
 /* router - ella */
 const frontRouter = require("./router/front");
 const adminLoginRouter = require("./router/admin-login");
+const adminBannerRouter = require("./router/admin-banner");
 const apiRouter = require("./router/api");
 app.use("/", frontRouter);
 app.use("/admin/login", adminLoginRouter);
+app.use("/admin/banner", adminBannerRouter);
 app.use("/api", apiRouter);
 
 /* router - rest */
