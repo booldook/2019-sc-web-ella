@@ -4,6 +4,7 @@ html.h-100(lang="ko")
 		meta(charset="UTF-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title Ella 관리자
 		include ../../inc/css.pug
 		link(href="/css/admin.css" rel="stylesheet")
 		include ../../inc/js.pug
@@ -13,6 +14,6 @@ html.h-100(lang="ko")
 			.d-flex.justify-content-between(style="height: calc(100% - 3rem);")
 				include ../../inc/admin-left.pug
 				.conts(style="overflow-y: scroll;")
-					block conts
+					block content
 			//- include ../../inc/admin-footer.pug
 			block js

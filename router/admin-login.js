@@ -14,7 +14,7 @@ async function postData(req, res, next) {
 	let result = await AdminLogin.findAll({
 		where: {adminID, adminPW}
 	});
-	if(result.length == 1 && result[0].grade > 1) res.render("admin/main.pug");
+	if(result.length == 1 && result[0].grade > 1) res.render("admin/main.pug", {leftNavs:[]});
 	else res.send(util.alertAdmin());
 }
 
