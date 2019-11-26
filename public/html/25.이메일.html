@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Contact Us</title>
+	<link rel="stylesheet" href="../css/fa.min.css">
+	<link rel="stylesheet" href="../css/animate.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/base.css">
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/jquery.cookie.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/imagesloaded.pkgd.min.js"></script>
+	<script src="../js/masonry.pkgd.min.js"></script>
+	<script src="../js/wow.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+	<script type="text/javascript">
+			(function(){
+					emailjs.init('YOUR_USER_ID');
+			})();
+	</script>
+	<script type="text/javascript">
+			window.onload = function() {
+					document.getElementById('contact-form').addEventListener('submit', function(event) {
+							event.preventDefault();
+							// generate the contact number value
+							this.contact_number.value = Math.random() * 100000 | 0;
+							emailjs.sendForm('contact_service', 'contact_template', this);
+					});
+			}
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<form id="contact-form">
+				<input type="hidden" name="contact_number">
+				<label>Name</label>
+				<input type="text" name="user_name">
+				<label>Email</label>
+				<input type="email" name="user_email">
+				<label>Message</label>
+				<textarea name="message"></textarea>
+				<input type="submit" value="Send">
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

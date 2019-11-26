@@ -18,6 +18,7 @@ const util = require(path.join(__dirname, "modules/util"));
 /* Express 설정 */
 app.locals.pretty = true;
 app.use("/", express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
