@@ -1,4 +1,41 @@
 extends ../layout/admin/layout-main.pug
 block content
-	div.text-center(style="margin-top: 56px;") 배너상단
+	h2 배너 상단 관리
+	h3.my-3 - 배너등록
+	form(name="bannerTopForm" action="/admin/banner/top" method="post" enctype="multipart/form-data")
+		table.table
+			tr
+				td.w-25(style="max-width: 150px;") 제목
+				td
+					input.form-control(type="text" name="title" placeholder="배너제목")
+			tr
+				td 배너위치
+				td.form-inline
+					select.form-control(name="position")
+						option(value="top") Top
+						option(value="bot") Bottom
+			tr
+				td 링크
+				td
+					input.form-control(type="text" name="link" placeholder="링크주소")
+			tr
+				td 첨부이미지
+				td
+					input.form-control-file(type="file" name="src")
+			tr
+				td(colspan="2")
+					textarea.form-control(name="desc" style="height: 200px;")
+			tr
+				td.text-center(colspan="2")
+					button.btn.btn-primary.mr-2 저장
+					button.btn.btn-danger(type="reset") 다시작성
+	h3.mt-5.mb-3 - 배너리스트
+	ul.d-flex.flex-wrap
+		li.border(style="flex: 32% 0 0; margin: 1% 0.5% 1% 1%;")
+			div
+				img.w-100(src="https://via.placeholder.com/300x200")
+			.p-2 제목
+			.p-2
+				button.btn-sm.btn-primary.mr-2 수정
+				button.btn-sm.btn-danger 삭제
 block js

@@ -13,6 +13,6 @@ AdminBanner.init({
 	sequelize,
 	modelName: "banners",
 });
-AdminBanner.sync({force: false});
+AdminBanner.sync();
 
 module.exports = {AdminBanner}
