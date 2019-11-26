@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 	<script type="text/javascript">
 			(function(){
-					emailjs.init('YOUR_USER_ID');
+					emailjs.init('user_TROFqVnbPGZyygPAci7nt');
 			})();
 	</script>
 	<script type="text/javascript">
@@ -29,7 +29,16 @@
 							event.preventDefault();
 							// generate the contact number value
 							this.contact_number.value = Math.random() * 100000 | 0;
-							emailjs.sendForm('contact_service', 'contact_template', this);
+							emailjs.sendForm('gmail2', 'template_Do4o09A1', this)
+							.then(function(res){
+								if(res.status == 200) {
+									alert("연락해 주셔서 감사합니다. 확인 즉시 연락드리겠습니다.");
+									document.getElementById('contact-form').reset();
+								}
+								else {
+									alert("서버에 장애가 생겼습니다. 다시 시도해 주세요.");
+								}
+							});
 					});
 			}
 	</script>
@@ -44,8 +53,10 @@
 				<input type="text" name="user_name">
 				<label>Email</label>
 				<input type="email" name="user_email">
+				<label>Subject</label>
+				<input type="text" name="user_subject">
 				<label>Message</label>
-				<textarea name="message"></textarea>
+				<textarea name="user_message"></textarea>
 				<input type="submit" value="Send">
 			</form>
 		</div>
