@@ -20,6 +20,10 @@ async function getData(req, res, next) {
 	}
 	switch(type) {
 		case "top":
+			let result = await AdminBanner.findAll({
+				order: [["id", "desc"]],
+			});
+			vals.lists = result;
 			res.render("admin/bannerTop", vals);
 			break;
 		case "bottom":
@@ -45,8 +49,7 @@ async function postData(req, res, next) {
 			let result = await AdminBanner.create({
 				title, position, link, desc, src
 			});
-			res.json(result);
-			//res.redirect("/admin/banner/top");
+			res.redirect("/admin/banner/top");
 			break;
 		case "bottom":
 			break;

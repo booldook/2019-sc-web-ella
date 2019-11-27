@@ -31,11 +31,15 @@ block content
 					button.btn.btn-danger(type="reset") 다시작성
 	h3.mt-5.mb-3 - 배너리스트
 	ul.d-flex.flex-wrap
-		li.border(style="flex: 32% 0 0; margin: 1% 0.5% 1% 1%;")
-			div
-				img.w-100(src="https://via.placeholder.com/300x200")
-			.p-2 제목
-			.p-2
-				button.btn-sm.btn-primary.mr-2 수정
-				button.btn-sm.btn-danger 삭제
+		each list in lists
+			li.border(style="flex: 32% 0 0; margin: 1% 0.5% 1% 1%;")
+				div
+					if list.src == ""
+						img.w-100(src="https://via.placeholder.com/300x200")
+					else
+						img.w-100(src=`/uploads/1911/${list.src}`)
+				.p-2= list.title
+				.p-2
+					button.btn-sm.btn-primary.mr-2 수정
+					button.btn-sm.btn-danger 삭제
 block js
