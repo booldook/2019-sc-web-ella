@@ -42,7 +42,11 @@ async function postData(req, res, next) {
 
 	switch(type) {
 		case "top":
-			
+			let result = await AdminBanner.create({
+				title, position, link, desc, src
+			});
+			res.json(result);
+			//res.redirect("/admin/banner/top");
 			break;
 		case "bottom":
 			break;
