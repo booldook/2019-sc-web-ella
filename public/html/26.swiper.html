@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>swiper</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+	<style>
+	.swiper-container {
+			width: 600px;
+			height: 300px;
+	}
+	.swiper-slide {
+	background: #ccc;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">Slide 1</div>
+			<div class="swiper-slide">Slide 2</div>
+			<div class="swiper-slide">Slide 3</div>
+		</div>
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<script>
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction: 'horizontal',
+		loop: true,
+		// Navigation arrows
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	})
+	</script>
+</body>
+
+</html>
