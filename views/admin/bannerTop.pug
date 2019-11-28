@@ -1,8 +1,10 @@
 extends ../layout/admin/layout-main.pug
 block content
 	h2 배너 상단 관리
-	h3.my-3 - 배너등록
-	form(name="bannerTopForm" action="/admin/banner/top" method="post" enctype="multipart/form-data")
+	h3.my-3.wr-title - 배너등록
+	form(name="bannerTopForm" action="/admin/banner/top" enctype="multipart/form-data")
+		input(type="hidden" name="_method" value="post")
+		input(type="hidden" name="id" value="")
 		table.table
 			tr
 				td.w-25(style="max-width: 150px;") 제목
@@ -22,6 +24,7 @@ block content
 				td 첨부이미지
 				td
 					input.form-control-file(type="file" name="src")
+					div.py-1.src-name
 			tr
 				td(colspan="2")
 					textarea.form-control(name="desc" style="height: 200px;")

@@ -9,6 +9,7 @@ const util = require(path.join(__dirname, "../modules/util"));
 router.get("/:type", getData);
 router.post("/:type", mt.upload.single("src"), postData);
 router.delete("/:type", deleteData);
+router.put("/:type", putData);
 
 /* Router CB */
 async function getData(req, res, next) {
@@ -67,6 +68,10 @@ async function deleteData(req, res, next) {
 	catch(error) {
 		next(error);
 	}
+}
+
+async function putData(req, res, next) {
+	res.send('저장되었습니다.');
 }
 
 
