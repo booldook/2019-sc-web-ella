@@ -43,7 +43,7 @@ block content
 						img.w-100(src=`/uploads/1911/${list.src}`)
 				.p-2= list.title
 				.p-2
-					button.btn-sm.btn-primary.mr-2 수정
+					button.btn-sm.btn-primary.mr-2(onclick=`chgData(${list.id})`) 수정
 					button.btn-sm.btn-danger(onclick=`confirm('정말로 삭제하시겠습니까?') ? deleteList(${list.id}) : false`) 삭제
 block js
 	script(src="/js/banner.js")
