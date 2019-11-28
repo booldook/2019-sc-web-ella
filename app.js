@@ -31,6 +31,7 @@ app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride(function (req, res) {
 	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
 		var method = req.body._method
+		console.log(method);
 		delete req.body._method
 		return method
 	}

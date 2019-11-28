@@ -7,7 +7,8 @@ const util = require(path.join(__dirname, "../modules/util"));
 
 /* REST */
 router.get("/:type", getData);
-router.post("/:type", mt.upload.single("src"), postData);
+router.post("/:type", postData);
+// router.post("/:type", mt.upload.single("src"), postData);
 router.delete("/:type", deleteData);
 router.put("/:type", putData);
 
