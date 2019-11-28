@@ -30,9 +30,12 @@ block content
 					button.btn.btn-primary.mr-2 저장
 					button.btn.btn-danger(type="reset") 다시작성
 	h3.mt-5.mb-3 - 배너리스트
-	ul.d-flex.flex-wrap
+	form(action="/admin/banner/top" method="post" id="deleteForm")
+		input(type="hidden" name="_method" value="delete")
+		input(type="hidden" name="id" value="")
+	ul.d-flex.flex-wrap.align-items-start(style="min-height: 2000px")
 		each list in lists
-			li.border(style="flex: 32% 0 0; margin: 1% 0.5% 1% 1%;")
+			li.border(style="flex: 32.33% 0 0; margin: 1% 0.5%")
 				div
 					if list.src == ""
 						img.w-100(src="https://via.placeholder.com/300x200")
@@ -41,5 +44,6 @@ block content
 				.p-2= list.title
 				.p-2
 					button.btn-sm.btn-primary.mr-2 수정
-					button.btn-sm.btn-danger 삭제
+					button.btn-sm.btn-danger(onclick=`confirm('정말로 삭제하시겠습니까?') ? deleteList(${list.id}) : false`) 삭제
 block js
+	script(src="/js/banner.js")

@@ -8,6 +8,7 @@ const util = require(path.join(__dirname, "../modules/util"));
 /* REST */
 router.get("/:type", getData);
 router.post("/:type", mt.upload.single("src"), postData);
+router.delete("/:type", deleteData);
 
 /* Router CB */
 async function getData(req, res, next) {
@@ -27,7 +28,7 @@ async function getData(req, res, next) {
 			res.render("admin/bannerTop", vals);
 			break;
 		case "bottom":
-				res.render("admin/bannerBottom", vals);
+			res.render("admin/bannerBottom", vals);
 			break;
 		default:
 			next();
@@ -43,19 +44,21 @@ async function postData(req, res, next) {
 	let desc = req.body.desc;
 	let src = "";
 	if(req.file) src = req.file.filename;
+	let result = await AdminBanner.create({
+		title, position, link, desc, src
+	});
+	res.redirect("/admin/banner/"+type);
+}
 
-	switch(type) {
-		case "top":
-			let result = await AdminBanner.create({
-				title, position, link, desc, src
-			});
-			res.redirect("/admin/banner/top");
-			break;
-		case "bottom":
-			break;
-		default:
-			next();
-			break;
+async function deleteData(req, res, next) {
+	let type = req.params.type;
+	let id = req.body.id;
+	try {
+		let result = await AdminBanner.destroy({ where: { id } });
+		res.redirect('/admin/banner/'+type);
+	}
+	catch(error) {
+		
 	}
 }
 

@@ -3,5 +3,6 @@
 /node_modules
 /config
 /public/uploads
+/log
 mysql-conn.js
 sequelize-conn.js
