@@ -8,21 +8,13 @@ app.listen(3000, () => {
 /* node_modules */
 const path = require("path");
 const fs = require("fs");
+const methodOverride = require('method-override');
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const methodOverride = require('method-override');
 
 /* modules */
 const createError = require('http-errors');
 const util = require(path.join(__dirname, "modules/util"));
-
-/* Express 설정 */
-app.locals.pretty = true;
-app.use("/", express.static(path.join(__dirname, "public")));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
 
 /* method-override 설정 */
 app.use(methodOverride('X-HTTP-Method'));
@@ -40,6 +32,14 @@ app.use(methodOverride(function (req, res) {
 /* morgan 설정 */
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {flags: 'a'});
 app.use(morgan('combined', { stream: accessLogStream }));
+
+/* Express 설정 */
+app.locals.pretty = true;
+app.use("/", express.static(path.join(__dirname, "public")));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 
 
 /* router - ella */

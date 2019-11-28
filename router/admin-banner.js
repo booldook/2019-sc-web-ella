@@ -6,6 +6,9 @@ const { AdminBanner } = require(path.join(__dirname, "../model/AdminBanner"));
 const util = require(path.join(__dirname, "../modules/util"));
 
 /* REST */
+router.all("/:type", (req, res, next) => {
+	next(router);
+})
 router.get("/:type", getData);
 router.post("/:type", postData);
 // router.post("/:type", mt.upload.single("src"), postData);
