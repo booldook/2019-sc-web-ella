@@ -79,16 +79,22 @@ $(".navi-show").mouseleave(function(){
 $.ajax({
 	url: "/api/ban/main",
 	success: function(res) {
-		console.log(res);
+		var html = '';
+		var folder = '';
+		for(var i in res) {
+			console.log(res[i].src.split("-")[0]);
+			folder = findPath(new Date(Number(res[i].src.split("-")[0])));
+			html += '<li>';
+			html += '<img src="/uploads/'+folder+'/'+res[i].src+'" alt="메인배너" class="img">';
+			if(res[i].desc != "") html += res[i].desc;
+			html += '</li>';
+		}
+		$(".main-ban").append(html);
+		new FxSlide({
+			slides: $(".main-ban"), cnt: 1, speed: 1000, delay: 4000, pager: $(".pagers")
+		});
 	}
 })
-new FxSlide({
-	slides: $(".main-ban"), 
-	cnt: 1, 
-	speed: 1000,
-	delay: 4000,
-	pager: $(".pagers")
-});
 
 //fx-slide : 서브 배너
 new FxSlide({
