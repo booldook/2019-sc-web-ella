@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const { AdminBanner } = require("../model/AdminBanner");
 
 /* Get */
 router.get("/ban/main", getBanMain);
 
-/* Post */
-
-
 /* Router CB */
-function getBanMain(req, res) {
-	res.send("메인베너");
+async function getBanMain(req, res) {
+	let result = await AdminBanner.findAll({
+		order: [["id", "asc"]],
+		where: { position: "top" }
+	});
+	res.json(result);
 }
 
 module.exports = router;

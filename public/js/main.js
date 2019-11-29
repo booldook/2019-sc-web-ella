@@ -62,6 +62,26 @@ $(".navi-show").mouseleave(function(){
 });
 
 // fx-slide : 메인 배너
+/*
+<li>
+	<img src="../img/slide-img/slideshow-1-compressor.jpg" alt="메인배너" class="img">
+	<ul class="ban-conts lt20">
+		<li class="ban-tit">COSMOPOLIS</li>
+		<li class="ban-bar"></li>
+		<li class="ban-cont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+			consectetur adipisicing elit.</li>
+		<li class="ban-bt">
+			<span class="bt-ban-link bt-rev">SHOP THE COLLECTION</span>
+		</li>
+	</ul>
+</li>
+*/
+$.ajax({
+	url: "/api/ban/main",
+	success: function(res) {
+		console.log(res);
+	}
+})
 new FxSlide({
 	slides: $(".main-ban"), 
 	cnt: 1, 
@@ -69,6 +89,8 @@ new FxSlide({
 	delay: 4000,
 	pager: $(".pagers")
 });
+
+//fx-slide : 서브 배너
 new FxSlide({
 	slides: $(".best-items"), 
 	cnt: 5, 
