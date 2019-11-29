@@ -49,7 +49,7 @@ async function postData(req, res, next) {
 	let title = req.body.title;
 	let position = req.body.position;
 	let link = req.body.link;
-	let desc = req.body.desc;
+	let desc = req.body.desc.trim().replace(/\n/g, "").replace(/\r/g, "").replace(/\t/g, "");
 	let src = "";
 	if(req.file) src = req.file.filename;
 	let result = await AdminBanner.create({
@@ -75,7 +75,7 @@ async function putData(req, res, next) {
 	let title = req.body.title;
 	let position = req.body.position;
 	let link = req.body.link;
-	let desc = req.body.desc;
+	let desc = req.body.desc.trim().replace(/\n/g, "").replace(/\r/g, "").replace(/\t/g, "");
 	let obj = {};
 	if(req.file) obj = { title, position, link, desc, src: req.file.filename }
 	else obj = { title, position, link, desc }
