@@ -6,14 +6,10 @@ const { AdminBanner } = require(path.join(__dirname, "../model/AdminBanner"));
 const util = require(path.join(__dirname, "../modules/util"));
 
 /* REST */
-router.all("/:type", (req, res, next) => {
-	next(router);
-})
 router.get("/:type", getData);
-router.post("/:type", postData);
-// router.post("/:type", mt.upload.single("src"), postData);
+router.post("/:type", mt.upload.single("src"), postData);
+router.post("/:type/:id", mt.upload.single("src"), putData);
 router.delete("/:type", deleteData);
-router.put("/:type", putData);
 
 /* Router CB */
 async function getData(req, res, next) {
@@ -75,7 +71,20 @@ async function deleteData(req, res, next) {
 }
 
 async function putData(req, res, next) {
-	res.send('저장되었습니다.');
+	let type = req.params.type;
+	let title = req.body.title;
+	let position = req.body.position;
+	let link = req.body.link;
+	let desc = req.body.desc;
+	let obj = {};
+	if(req.file) obj = { title, position, link, desc, src: req.file.filename }
+	else obj = { title, position, link, desc }
+	let result = await AdminBanner.update(obj, {
+		where: {
+			id: req.params.id
+		}
+	});
+	res.redirect("/admin/banner/"+type);
 }
 
 

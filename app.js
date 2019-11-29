@@ -16,19 +16,6 @@ const bodyParser = require("body-parser");
 const createError = require('http-errors');
 const util = require(path.join(__dirname, "modules/util"));
 
-/* method-override 설정 */
-app.use(methodOverride('X-HTTP-Method'));
-app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(methodOverride('X-Method-Override'));
-app.use(methodOverride(function (req, res) {
-	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
-		var method = req.body._method
-		console.log(method);
-		delete req.body._method
-		return method
-	}
-}));
-
 /* morgan 설정 */
 var accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {flags: 'a'});
 app.use(morgan('combined', { stream: accessLogStream }));
@@ -41,6 +28,18 @@ app.use(express.urlencoded({extended: false}));
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
+/* method-override 설정 */
+app.use(methodOverride('X-HTTP-Method'));
+app.use(methodOverride('X-HTTP-Method-Override'));
+app.use(methodOverride('X-Method-Override'));
+app.use(methodOverride(function (req, res) {
+	if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+		var method = req.body._method
+		console.log(method);
+		delete req.body._method
+		return method
+	}
+}));
 
 /* router - ella */
 const frontRouter = require("./router/front");
